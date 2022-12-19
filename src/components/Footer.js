@@ -1,7 +1,7 @@
 import "../App.css";
 import Facebook from "./img/facebook.png";
 import Instagram from "./img/Instagram.png";
-import GitHub from "./img/GitHub.png"
+import GitHub from "./img/GitHub.png";
 function Footer() {
   return (
     <footer className="footer">
