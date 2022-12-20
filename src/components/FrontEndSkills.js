@@ -1,5 +1,5 @@
 import React from "react";
-import Reveal from "react-reveal/Reveal";
+import Reveal from "../react-reveal/Reveal";
 import "../App.css";
 
 function FrontEndSkills() {

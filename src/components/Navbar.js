@@ -2,7 +2,7 @@ import React from "react";
 import logo from "./img/logo-AP.png";
 import "../App.css";
 import $ from "jquery";
-import Zoom from "react-reveal/Zoom";
+import Zoom from "../react-reveal/Zoom";
 
 function Navbar() {
   const [name, setName] = React.useState("");
