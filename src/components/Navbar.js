@@ -2,7 +2,7 @@ import React from "react";
 import logo from "./img/logo-AP.png";
 import "../App.css";
 import $ from "jquery";
-import Zoom from "../react-reveal/Zoom";
+// import Zoom from "../react-reveal/Zoom";
 
 function Navbar() {
   const [name, setName] = React.useState("");
@@ -52,7 +52,7 @@ function Navbar() {
           <span></span>
         </div>
       </div>
-      <Zoom left>
+
         <div className="contact">
           <div>
             <form className="form" netlify name="contact" onSubmit={handleSubmit}>
@@ -79,7 +79,6 @@ function Navbar() {
             </form>
           </div>
         </div>
-      </Zoom>
     </section>
   );
 }
