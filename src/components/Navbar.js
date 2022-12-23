@@ -73,7 +73,7 @@ function Navbar() {
                   className="button"
                   id="submit"
                   type="submit"
-                  value="LET’S GET STARTED"
+                  value="contact me"
                 />
               </div>
             </form>

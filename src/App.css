@@ -270,6 +270,7 @@ form .form-imput {
 form .form-imput input,
 form .form-imput textarea {
   background-color: #181823;
+  color: white;
   border: 0;
 }
 form .form-imput > p {
