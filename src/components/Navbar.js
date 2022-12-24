@@ -2,7 +2,6 @@ import React from "react";
 import logo from "./img/logo-AP.png";
 import "../App.css";
 import $ from "jquery";
-// import Zoom from "../react-reveal/Zoom";
 
 function Navbar() {
   const [name, setName] = React.useState("");
@@ -40,6 +39,11 @@ function Navbar() {
           <li>
             <a className="clic" href="#FrontEndSkills">
               FrontEndSkills
+            </a>
+          </li>
+          <li>
+            <a className="clic" href="#backEndSkills">
+              BackEndSkills
             </a>
           </li>
         </ul>

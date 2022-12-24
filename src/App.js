@@ -2,9 +2,9 @@ import "./App.css";
 import React from "react";
 import Navbar from "./components/Navbar";
 import  FrontEndSkills from "./components/FrontEndSkills";
-import Skills from "./components/Skills";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer";
+import BackEndSkills from "./components/backEndSkills";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <Navbar />
       <Hero />
       <FrontEndSkills />
-      <Skills />
+      <BackEndSkills />
       <Footer />
     </main>
   );
