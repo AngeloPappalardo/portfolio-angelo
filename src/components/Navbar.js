@@ -46,6 +46,11 @@ function Navbar() {
               BackEndSkills
             </a>
           </li>
+          <li>
+            <a className="clic" href="https://pappalardo-angelo-pokedex.netlify.app/">
+              portfolio
+            </a>
+          </li>
         </ul>
         <div className="cta">
           <button className="button contact-button">Contact</button>
