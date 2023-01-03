@@ -5,7 +5,7 @@ function BackEndSkills() {
   return (
     <section id="backEndSkills">
       <div className="skills-text">
-          <h2 className="med-text">back-end skills</h2>
+          <h2 className="med-text">Back-end Skills</h2>
       </div>
       <div className="front-end-skills mb-1">
         <div className="front-end">

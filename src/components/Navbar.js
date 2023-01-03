@@ -47,7 +47,7 @@ function Navbar() {
             </a>
           </li>
           <li>
-            <a className="clic" href="https://pappalardo-angelo-pokedex.netlify.app/">
+            <a className="clic" href="#portfolio">
               portfolio
             </a>
           </li>

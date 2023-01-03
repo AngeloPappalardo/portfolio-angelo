@@ -5,6 +5,7 @@ import  FrontEndSkills from "./components/FrontEndSkills";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer";
 import BackEndSkills from "./components/backEndSkills";
+import Portfolio from "./components/Portfolio";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Hero />
       <FrontEndSkills />
       <BackEndSkills />
+      <Portfolio />
       <Footer />
     </main>
   );
