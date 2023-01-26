@@ -1,6 +1,6 @@
 import React from "react";
 import $ from "jquery";
-import "../App.css";
+
 
 $(document).ready(() =>
   $(".cta").on("click", () => $(".contact").toggleClass("contact-open"))

@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "./img/logo-AP.png";
-import "../App.css";
+
 import $ from "jquery";
 import Contact from "./Contact";
 

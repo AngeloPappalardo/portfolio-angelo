@@ -1,6 +1,6 @@
 import background from "./img/img-portfolio.png"
 import img from "./img/angelo.png"
-import "../App.css";
+
 // import LightSpeed from "../react-reveal/LightSpeed"
 function Hero() {
   return (
