@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import logo from "./img/logo-AP.png";
 
 import $ from "jquery";
 import Contact from "./Contact";
 
 function Navbar() {
+  const [btn, setBtn] = useState(false);
+
+  useEffect(() => {
+    const color = document.querySelector("#font");
+    if (btn === true) {
+      color.classList.add("light-font");
+      color.classList.remove("dark-font");
+
+    } else{
+      color.classList.remove("light-font");
+      color.classList.add("dark-font");
+    }
+    
+  });
+
   return (
     <section className="flexbox">
       <div className="header">
@@ -33,8 +48,17 @@ function Navbar() {
             </a>
           </li>
         </ul>
-        <div className="cta">
-          <button className=" button contact-button">Contact</button>
+        <div className="flex">
+          <button className="switch-btn" onClick={() => setBtn(!btn)}>
+            <span>day</span>
+            <span>night</span>
+            {btn ? (
+              <span className="switch"></span>
+            ) : (
+              <span className="switch slide"></span>
+            )}
+          </button>
+          <button className=" cta button contact-button">Contact</button>
         </div>
         <div className="hamburger">
           <span></span>
@@ -42,7 +66,7 @@ function Navbar() {
           <span></span>
         </div>
       </div>
-        <Contact />
+      <Contact />
     </section>
   );
 }
@@ -54,4 +78,3 @@ $(document).ready(() =>
 $(document).ready(() =>
   $(".clic").on("click", () => $(".menu").toggleClass("menu--open"))
 );
-

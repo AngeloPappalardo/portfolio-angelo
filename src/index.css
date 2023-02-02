@@ -1,14 +1,14 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -27,12 +27,26 @@ h3,
 h4,
 h5,
 p {
-  color: #fff;
+  color: var(--clr-text);
   padding-bottom: 20px;
   padding-left: 40px;
 }
-.body-font {
-  background: #0a0a0a;
+.light-font {
+  background: #efefef;
+  --clr-text: #222;
+  --clr-bg: #dee1e6;
+  --clr-border: #dbdbdb;
+  --crl-footer: #6a6a6a;
+  transition: all 0.5s linear;
+}
+
+.dark-font {
+  background: #111;
+  --clr-text: #d4d3d3;
+  --clr-bg: #252525;
+  --clr-border: #333333;
+  --crl-footer: #000512;
+  transition: all 0.5s linear;
 }
 
 .button {
@@ -43,6 +57,34 @@ p {
   border-radius: 30px;
 }
 
+.switch-btn {
+  position: absolute;
+  width: 5rem;
+  height: 2rem;
+  right: 130px;
+  margin-top: 15px;
+  display: flex;
+  border-radius: 100px;
+  align-items: center;
+  justify-content: space-around;
+  border: none;
+  background: #dee1e6;
+}
+.switch {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #007ced;
+  border-radius: 100px;
+  margin: 0;
+  display: block;
+  transition: 0.3s;
+}
+.slide {
+  left: 50%;
+}
 .button__mobile {
   display: none;
 }
@@ -66,6 +108,10 @@ p {
   font-weight: bold;
 }
 
+.flex {
+  display: flex;
+  align-items: center;
+}
 
 @media (max-width: 768px) {
   .big-text {
@@ -203,9 +249,9 @@ p {
 /*Front-end skills, back-end skills e portfolio */
 
 .skills-text {
-  background: #252525;
+  background: var(--clr-bg);
   padding: 20px;
-  border: 5px solid #333333;
+  border: var(--clr-border);
 }
 
 .container-span {
@@ -257,30 +303,30 @@ p {
   width: 50%;
   margin-left: 40px;
   margin-top: 40px;
-  transition: transform .2s;
+  transition: transform 0.2s;
 }
 .button-portfolio {
-	box-shadow: 0px 10px 14px -7px #276873;
-	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
-	background-color:#599bb3;
-	border-radius:8px;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-size:20px;
-	font-weight:bold;
-	padding:13px 32px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #3d768a;
+  box-shadow: 0px 10px 14px -7px #276873;
+  background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+  background-color: #599bb3;
+  border-radius: 8px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 13px 32px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #3d768a;
   margin-left: 40px;
 }
 .button-portfolio:hover {
-	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
-	background-color:#408c99;
+  background: linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+  background-color: #408c99;
 }
 .button-portfolio:active {
-	position:relative;
-	top:1px;
+  position: relative;
+  top: 1px;
 }
 .img-portfolio:hover {
   transform: scale(1.1);
@@ -354,11 +400,9 @@ form .form-imput > p {
 /*footer*/
 
 .footer {
-  background: #000512;
+  background: var(--crl-footer);
   padding: 30px 0;
 }
-
-
 
 /* Helpers*/
 
@@ -368,8 +412,6 @@ form .form-imput > p {
 .mb-2 {
   margin-bottom: 100px;
 }
-
-
 
 *,
 *::before,

@@ -9,7 +9,7 @@ import Portfolio from "./components/Portfolio";
 
 function App() {
   return (
-    <main className="body-font">
+    <main id="font" className="dark-font">
       <Navbar />
       <Hero />
       <FrontEndSkills />
