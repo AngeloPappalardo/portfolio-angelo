@@ -60,7 +60,6 @@ p {
   cursor: pointer;
   border-radius: 15px;
   box-shadow: 0, 1px, 3px, rgb(0, 0, 20%);
-  margin-left: 60px;
   border: solid 3px #6a6a6a;
   transition: all 0.3s linear;
 }
@@ -74,7 +73,7 @@ p {
   position: absolute;
   width: 5rem;
   height: 2rem;
-  right: 130px;
+  right: 140px;
   margin-top: 15px;
   display: flex;
   border-radius: 100px;
@@ -129,6 +128,9 @@ p {
 @media (max-width: 768px) {
   .big-text {
     font-size: 40px;
+  }
+  .switch-btn {
+    right: 80px;
   }
 }
 
@@ -401,6 +403,9 @@ form .form-imput > p {
 }
 .mb-2 {
   margin-bottom: 100px;
+}
+.ml-1 {
+  margin-left: 50px;
 }
 
 *,

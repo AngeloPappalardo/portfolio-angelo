@@ -12,7 +12,7 @@ function Portfolio() {
         <div className="front-end">
           <h2 className="normal-text">Gallerie</h2>
           <a
-            className="button"
+            className="button ml-1"
             href="https://pappalardo-angelo-pokedex.netlify.app/"
           >
             Pokedex
