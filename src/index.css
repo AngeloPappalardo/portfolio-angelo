@@ -37,6 +37,7 @@ p {
   --clr-bg: #dee1e6;
   --clr-border: #dbdbdb;
   --crl-footer: #6a6a6a;
+  --crl-btn: trasparent;
   transition: all 0.5s linear;
 }
 
@@ -46,15 +47,27 @@ p {
   --clr-bg: #252525;
   --clr-border: #333333;
   --crl-footer: #000512;
+  --crl-btn: #fff;
   transition: all 0.5s linear;
 }
 
 .button {
   padding: 18px 28px;
-  background-color: #4a606bdb;
-  color: #fff;
+  background: var(--crl-btn);
+  color: #111;
   display: inline-block;
-  border-radius: 30px;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 15px;
+  box-shadow: 0, 1px, 3px, rgb(0, 0, 20%);
+  margin-left: 60px;
+  border: solid 3px #6a6a6a;
+  transition: all 0.3s linear;
+}
+.button:hover {
+  background: #111;
+  color: #fff;
+  transition: all 0.3s linear;
 }
 
 .switch-btn {
@@ -304,29 +317,6 @@ p {
   margin-left: 40px;
   margin-top: 40px;
   transition: transform 0.2s;
-}
-.button-portfolio {
-  box-shadow: 0px 10px 14px -7px #276873;
-  background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
-  background-color: #599bb3;
-  border-radius: 8px;
-  display: inline-block;
-  cursor: pointer;
-  color: #ffffff;
-  font-size: 20px;
-  font-weight: bold;
-  padding: 13px 32px;
-  text-decoration: none;
-  text-shadow: 0px 1px 0px #3d768a;
-  margin-left: 40px;
-}
-.button-portfolio:hover {
-  background: linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
-  background-color: #408c99;
-}
-.button-portfolio:active {
-  position: relative;
-  top: 1px;
 }
 .img-portfolio:hover {
   transform: scale(1.1);
