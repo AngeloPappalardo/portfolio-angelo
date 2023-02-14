@@ -5,21 +5,25 @@ import $ from "jquery";
 import Contact from "./Contact";
 
 function Navbar() {
-  const [btn, setBtn] = useState(false);
+  const getFromLocalStorage = () => {
+    if (localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+  };
+  const [thame, setTheme] = useState(getFromLocalStorage || "light-font");
+
+  const cambiaTema = () => {
+    if (thame === "light-font") {
+      setTheme("dark-font");
+    } else {
+      setTheme("light-font");
+    }
+  };
 
   useEffect(() => {
-    const color = document.querySelector("#font");
-    if (btn === true) {
-      color.classList.add("light-font");
-      color.classList.remove("dark-font");
-
-    } else{
-      color.classList.remove("light-font");
-      color.classList.add("dark-font");
-    }
-    
-  });
-
+    document.documentElement.className = thame;
+    localStorage.setItem("theme", thame);
+  }, [thame]);
   return (
     <section className="flexbox">
       <div className="header">
@@ -49,14 +53,10 @@ function Navbar() {
           </li>
         </ul>
         <div className="flex">
-          <button className="switch-btn" onClick={() => setBtn(!btn)}>
+          <button className="switch-btn" onClick={cambiaTema}>
             <span>day</span>
             <span>night</span>
-            {btn ? (
               <span className="switch"></span>
-            ) : (
-              <span className="switch slide"></span>
-            )}
           </button>
           <button className=" cta button contact-button">Contact</button>
         </div>

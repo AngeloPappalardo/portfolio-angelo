@@ -39,6 +39,7 @@ p {
   --crl-footer: #6a6a6a;
   --crl-btn: trasparent;
   transition: all 0.5s linear;
+  --somekeyword: 0;
 }
 
 .dark-font {
@@ -48,6 +49,7 @@ p {
   --clr-border: #333333;
   --crl-footer: #000512;
   --crl-btn: #fff;
+  --somekeyword:50%;
   transition: all 0.5s linear;
 }
 
@@ -87,7 +89,7 @@ p {
   width: 50%;
   height: 100%;
   top: 0;
-  left: 0;
+  left: var(--somekeyword);
   background: #007ced;
   border-radius: 100px;
   margin: 0;
