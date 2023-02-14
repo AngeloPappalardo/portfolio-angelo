@@ -96,9 +96,7 @@ p {
   display: block;
   transition: 0.3s;
 }
-.slide {
-  left: 50%;
-}
+
 .button__mobile {
   display: none;
 }

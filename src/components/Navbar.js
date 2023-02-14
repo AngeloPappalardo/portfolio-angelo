@@ -8,6 +8,8 @@ function Navbar() {
   const getFromLocalStorage = () => {
     if (localStorage.getItem("theme")) {
       return localStorage.getItem("theme");
+    } else {
+      return "light-font";
     }
   };
   const [thame, setTheme] = useState(getFromLocalStorage || "light-font");
@@ -56,7 +58,7 @@ function Navbar() {
           <button className="switch-btn" onClick={cambiaTema}>
             <span>day</span>
             <span>night</span>
-              <span className="switch"></span>
+            <span className="switch"></span>
           </button>
           <button className=" cta button contact-button">Contact</button>
         </div>
