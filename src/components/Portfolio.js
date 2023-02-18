@@ -3,7 +3,7 @@ import data from "../data";
 import Progetti from "./Progetti";
 
 function Portfolio(id) {
-  const [progetti, setProgetti] = useState(data);
+  const [progetti] = useState(data);
   const [active, setActive] = useState(0);
 
   const prossimaSlide = () => {
