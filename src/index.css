@@ -39,7 +39,7 @@ p {
   --crl-footer: #6a6a6a;
   --crl-btn: trasparent;
   transition: all 0.5s linear;
-  --somekeyword: 0;
+  --somekeyword: 1.5px;
 }
 
 .dark-font {
@@ -73,27 +73,25 @@ p {
 
 .switch-btn {
   position: absolute;
-  width: 5rem;
-  height: 2rem;
+  width: 70px;
+  height: 40px;
   right: 140px;
   margin-top: 15px;
   display: flex;
-  border-radius: 100px;
+  border-radius: 20px;
   align-items: center;
   justify-content: space-around;
   border: none;
-  background: #dee1e6;
+  background: #413e44;
 }
 .switch {
   position: absolute;
-  width: 50%;
-  height: 100%;
-  top: 0;
+  width: 33px;
+  height: 34px;
+  top: 3px;
   left: var(--somekeyword);
   background: #007ced;
-  border-radius: 100px;
-  margin: 0;
-  display: block;
+  border-radius: 50px;
   transition: 0.3s;
 }
 
@@ -197,6 +195,9 @@ p {
     position: absolute;
     top: 40px;
     right: 30px;
+    background: transparent;
+    padding: 0;
+    border: 0;
   }
   .hamburger span {
     background: #fff;
@@ -450,7 +451,6 @@ form .form-imput > p {
 .mb-2 {
   margin-bottom: 100px;
 }
-
 
 *,
 *::before,

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import logo from "./img/logo-AP.png";
+import { MdWbSunny } from "react-icons/md";
+import { TbMoonFilled } from "react-icons/tb";
 
 import $ from "jquery";
 import Contact from "./Contact";
@@ -32,41 +34,33 @@ function Navbar() {
         <div className="logo">
           <img src={logo} alt="logo IMG" />
         </div>
-        <ul className="menu">
+        <ul className="clic menu">
           <li>
-            <a className="clic" href="#home">
-              Home
-            </a>
+            <a href="#home">Home</a>
           </li>
           <li>
-            <a className="clic" href="#FrontEndSkills">
-              FrontEndSkills
-            </a>
+            <a href="#FrontEndSkills">FrontEndSkills</a>
           </li>
           <li>
-            <a className="clic" href="#backEndSkills">
-              BackEndSkills
-            </a>
+            <a href="#backEndSkills">BackEndSkills</a>
           </li>
           <li>
-            <a className="clic" href="#portfolio">
-              portfolio
-            </a>
+            <a href="#portfolio">portfolio</a>
           </li>
         </ul>
         <div className="flex">
           <button className="switch-btn" onClick={cambiaTema}>
-            <span>day</span>
-            <span>night</span>
+            <MdWbSunny fontSize={20} color="rgb(246, 223, 0)" />
+            <TbMoonFilled fontSize={20} color="rgb(155, 155, 217)" />
             <span className="switch"></span>
           </button>
           <button className=" cta button contact-button">Contact</button>
         </div>
-        <div className="hamburger">
+        <button className="hamburger">
           <span></span>
           <span></span>
           <span></span>
-        </div>
+        </button>
       </div>
       <Contact />
     </section>
