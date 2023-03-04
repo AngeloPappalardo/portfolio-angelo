@@ -37,8 +37,9 @@ p {
   --clr-bg: #dee1e6;
   --clr-border: #dbdbdb;
   --crl-footer: #6a6a6a;
+  --crl-header: #d7d7d78f;
   --crl-btn: trasparent;
-  transition: all 0.5s linear;
+  transition: all 0.6s linear;
   --somekeyword: 1.5px;
 }
 
@@ -49,8 +50,9 @@ p {
   --clr-border: #333333;
   --crl-footer: #000512;
   --crl-btn: #fff;
+  --crl-header: #2222228f;
   --somekeyword: 50%;
-  transition: all 0.5s linear;
+  transition: all 0.6s linear;
 }
 
 .button {
@@ -135,7 +137,7 @@ p {
 /* header */
 
 .header {
-  background: #2222228f;
+  background: var(--crl-header);
   width: 100%;
   position: fixed;
   z-index: 10;
@@ -158,7 +160,7 @@ p {
   display: inline-block;
 }
 .menu li a {
-  color: #fff;
+  color: var(--clr-text);
   padding: 15px;
   display: block;
 }
