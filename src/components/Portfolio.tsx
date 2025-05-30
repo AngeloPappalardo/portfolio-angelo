@@ -89,7 +89,7 @@ const structuredData = {
       name: "Pappalardo Angelo",
     },
     description: project.description,
-    image: typeof project.image === "string" ? project.image : "", // puoi sostituirlo con l'URL assoluto se serve
+    image: `https://pappalardo-angelo.netlify.app${project.image}`, // puoi sostituirlo con l'URL assoluto se serve
     keywords: project.technologies.join(", "),
   })),
 };
