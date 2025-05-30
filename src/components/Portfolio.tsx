@@ -77,6 +77,7 @@ const projects = [
     delay: 6,
   },
 ];
+
 // Genera lo schema.org JSON-LD per tutti i progetti
 const structuredData = {
   "@context": "https://schema.org",
@@ -86,11 +87,11 @@ const structuredData = {
     url: project.link,
     author: {
       "@type": "Person",
-      name: "Pappalardo Angelo",
+      name: "Pappalardo Angelo"
     },
     description: project.description,
-    image: `https://pappalardo-angelo.netlify.app${project.image}`, // puoi sostituirlo con l'URL assoluto se serve
-    keywords: project.technologies.join(", "),
+    image: `https://pappalardo-angelo.netlify.app${project.image}`,
+    keywords: project.technologies.join(", ")
   })),
 };
 
