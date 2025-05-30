@@ -4,24 +4,42 @@ import VacanzeImg from "../assets/img/VacanzeMode.png";
 import Pokedex from "../assets/img/Pokedex.png";
 import FilmAct from "../assets/img/FilmAct.png";
 import Swamm from "../assets/img/Swamm.png";
-import Telereading from "../assets/img/Telereading.png"
+import Telereading from "../assets/img/Telereading.png";
+import SitoTelereading from "../assets/img/SitoTelereading.png";
 
 const projects = [
   {
-    name: "Swamm",
-    description: "SWAMM è un progetto per il controllo sostenibile dell'acqua tramite un dispositivo di telemetria.",
-    image: Swamm,
-    link: "https://swamm.eu/#/",
-    technologies: ["Quasar.js", "vue.js", "CSS"],
+    name: "Sito Telereading",
+    description:
+      "Sito web aziendale per Telereading, Specialisti in tecnologie per risparmio energetico e gestione delle utilities",
+    image: SitoTelereading,
+    link: "https://www.telereading.it/",
+    technologies: [
+      "React.js",
+      "Tailwind CSS",
+      "HTML",
+      "SEO-Friendly",
+      "Responsive Design",
+    ],
     delay: 0,
   },
   {
+    name: "Swamm",
+    description:
+      "SWAMM è un progetto per il controllo sostenibile dell'acqua tramite un dispositivo di telemetria.",
+    image: Swamm,
+    link: "https://swamm.eu/#/",
+    technologies: ["Quasar.js", "vue.js", "CSS"],
+    delay: 1,
+  },
+  {
     name: "Telereading",
-    description: "Progettazione di microservizi per il pagamento della sosta con PagoPA.",
+    description:
+      "Progettazione di microservizi per il pagamento della sosta con PagoPA.",
     image: Telereading,
     link: "https://www.iotparking.it/",
     technologies: ["Java", "Spring boot", "MongoDB", "API Rest", "Soap"],
-    delay: 1,
+    delay: 2,
   },
   {
     name: "Film Act",
@@ -30,7 +48,7 @@ const projects = [
     image: FilmAct,
     link: "https://filmact.netlify.app/",
     technologies: ["React.js", "API", "Responsive Design"],
-    delay: 2,
+    delay: 3,
   },
   {
     name: "Dark Mode Tutorial",
@@ -39,7 +57,7 @@ const projects = [
     image: DarckImg,
     link: "https://dark-mode-tutorial.netlify.app/",
     technologies: ["React.js", "Dark/Light Theme"],
-    delay: 3,
+    delay: 4,
   },
   {
     name: "Vacanze Card List",
@@ -47,7 +65,7 @@ const projects = [
     image: VacanzeImg,
     link: "https://vacanze.netlify.app/",
     technologies: ["React.js", "CSS", "JavaScript"],
-    delay: 4,
+    delay: 5,
   },
   {
     name: "Pokedex",
@@ -56,37 +74,58 @@ const projects = [
     image: Pokedex,
     link: "https://pappalardo-angelo-pokedex.netlify.app/",
     technologies: ["HTML", "CSS", "JavaScript"],
-    delay: 5,
+    delay: 6,
   },
-
 ];
+// Genera lo schema.org JSON-LD per tutti i progetti
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": projects.map((project) => ({
+    "@type": "CreativeWork",
+    name: project.name,
+    url: project.link,
+    author: {
+      "@type": "Person",
+      name: "Pappalardo Angelo",
+    },
+    description: project.description,
+    image: typeof project.image === "string" ? project.image : "", // puoi sostituirlo con l'URL assoluto se serve
+    keywords: project.technologies.join(", "),
+  })),
+};
 
 const Portfolio = () => {
   return (
-    <section id="portfolio" className="container px-4 py-24">
-      <div className="max-w-3xl mx-auto mb-12 text-center">
-        <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-700 dark:from-primary dark:to-blue-400">
-          Portfolio
-        </h2>
-        <p className="text-lg text-muted-foreground">
-          Una selezione dei miei progetti recenti
-        </p>
-      </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <section id="portfolio" className="container px-4 py-24">
+        <div className="max-w-3xl mx-auto mb-12 text-center">
+          <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-700 dark:from-primary dark:to-blue-400">
+            Portfolio
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            Una selezione dei miei progetti recenti
+          </p>
+        </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {projects.map((project, index) => (
-          <ProjectCard
-            key={index}
-            name={project.name}
-            description={project.description}
-            image={project.image}
-            link={project.link}
-            technologies={project.technologies}
-            delay={project.delay}
-          />
-        ))}
-      </div>
-    </section>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {projects.map((project, index) => (
+            <ProjectCard
+              key={index}
+              name={project.name}
+              description={project.description}
+              image={project.image}
+              link={project.link}
+              technologies={project.technologies}
+              delay={project.delay}
+            />
+          ))}
+        </div>
+      </section>
+    </>
   );
 };
 
