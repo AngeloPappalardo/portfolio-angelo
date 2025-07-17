@@ -1,6 +1,7 @@
 {
   "title": "Portfolio",
   "subtitle": "Una selezione dei miei progetti recenti",
+  "btnProject" : "Visita Progetto",
   "projects": [
     {
       "name": "Sito Telereading",

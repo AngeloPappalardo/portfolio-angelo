@@ -59,14 +59,15 @@ const Header = () => {
             <button
               key={item.name}
               onClick={() => handleNavigation(item.href)}
+              aria-label={'Navigation to ' + item.name}
               className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
             >
               {item.name}
             </button>
           ))}
-          <Button variant="outline" onClick={handleEmail} className="gap-2">
+          <Button aria-label="Email" variant="outline" onClick={handleEmail} className="gap-2">
             <Mail className="h-4 w-4" />
-             {t('nav.contact')}
+            {t("nav.contact")}
           </Button>
           <Button
             variant="ghost"
@@ -75,6 +76,7 @@ const Header = () => {
               i18n.changeLanguage(i18n.language === "en-US" ? "it-IT" : "en-US")
             }
             className="text-sm px-2"
+            aria-label="Cambia lingua"
           >
             {i18n.language === "en-US" ? "IT" : "EN"}
           </Button>
@@ -89,9 +91,11 @@ const Header = () => {
             size="icon"
             onClick={handleEmail}
             className="rounded-full"
+            aria-label="Invia email"
           >
             <Mail className="h-4 w-4" />
           </Button>
+
           <Button
             variant="ghost"
             size="sm"
@@ -99,16 +103,19 @@ const Header = () => {
               i18n.changeLanguage(i18n.language === "en-US" ? "it-IT" : "en-US")
             }
             className="text-sm px-2"
+            aria-label="Cambia lingua"
           >
             {i18n.language === "en-US" ? "IT" : "EN"}
           </Button>
 
-          <ThemeToggle />
+          <ThemeToggle aria-label="Cambia tema" />
+
           <Button
             variant="ghost"
             size="icon"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="rounded-full"
+            aria-label={mobileMenuOpen ? "Chiudi menu" : "Apri menu"}
           >
             {mobileMenuOpen ? (
               <X className="h-5 w-5" />
@@ -128,6 +135,7 @@ const Header = () => {
                 key={item.name}
                 onClick={() => handleNavigation(item.href)}
                 className="text-lg font-medium w-full py-2 text-center hover:text-primary transition-colors"
+                aria-label={'Navigation to ' + item.name}
               >
                 {item.name}
               </button>

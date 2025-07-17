@@ -32,6 +32,7 @@ const Footer = () => {
                   <a
                     href="mailto:angelo961996@gmail.com"
                     className="text-primary hover:underline"
+                    aria-label="Email Angelo Pappalardo"
                   >
                     angelo961996@gmail.com
                   </a>
@@ -43,8 +44,9 @@ const Footer = () => {
                 <div>
                   <p className="font-medium">{t("phone")}</p>
                   <a
-                    href="tel:+393001234567"
+                    href="tel:+393453901754"
                     className="text-primary hover:underline"
+                    aria-label="Call Angelo Pappalardo"
                   >
                     +39 345 390 1754
                   </a>
@@ -76,7 +78,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-card hover:bg-primary hover:text-white text-foreground p-2 rounded-full transition-colors"
-                aria-label="LinkedIn"
+                aria-label="Facebook"
               >
                 <SiFacebook className="h-5 w-5" />
               </a>
@@ -85,7 +87,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-card hover:bg-primary hover:text-white text-foreground p-2 rounded-full transition-colors"
-                aria-label="LinkedIn"
+                aria-label="Instagram"
               >
                 <SiInstagram className="h-5 w-5" />
               </a>

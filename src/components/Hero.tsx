@@ -37,6 +37,7 @@ const Hero = () => {
             variant="default"
             size="lg"
             className="rounded-full"
+            aria-label={'Navigation to ' + t("btnProject")}
           >
             {t("btnProject")}
           </Button>
@@ -50,6 +51,7 @@ const Hero = () => {
             variant="outline"
             size="lg"
             className="rounded-full"
+            aria-label={'Navigation to ' + t("btnSkills")}
           >
             {t("btnSkills")}
           </Button>
@@ -62,6 +64,7 @@ const Hero = () => {
           size="icon"
           onClick={scrollToNextSection}
           className="rounded-full h-10 w-10 border border-primary/30"
+          aria-label="Scroll to next section"
         >
           <ArrowDown className="h-5 w-5 text-primary" />
         </Button>

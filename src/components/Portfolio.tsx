@@ -1,11 +1,11 @@
 import ProjectCard from "./ProjectCard";
-import DarckImg from "../assets/img/darkMode.png";
-import VacanzeImg from "../assets/img/VacanzeMode.png";
-import Pokedex from "../assets/img/Pokedex.png";
-import FilmAct from "../assets/img/FilmAct.png";
-import Swamm from "../assets/img/Swamm.png";
-import Telereading from "../assets/img/Telereading.png";
-import SitoTelereading from "../assets/img/SitoTelereading.png";
+import DarckImg from "../assets/img/darkMode.jpg";
+import VacanzeImg from "../assets/img/VacanzeMode.jpg";
+import Pokedex from "../assets/img/Pokedex.jpg";
+import FilmAct from "../assets/img/FilmAct.jpg";
+import Swamm from "../assets/img/Swamm.jpg";
+import Telereading from "../assets/img/Telereading.jpg";
+import SitoTelereading from "../assets/img/SitoTelereading.jpg";
 import { useTranslation } from "react-i18next";
 
 const Portfolio = () => {

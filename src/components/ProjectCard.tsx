@@ -2,6 +2,8 @@
 import { cn } from "@/lib/utils";
 import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
+
 
 interface ProjectCardProps {
   name: string;
@@ -13,6 +15,7 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ name, description, image, link, technologies = [], delay = 0 }: ProjectCardProps) => {
+  const { t } = useTranslation("portfolio");
   return (
     <div 
       className={cn(
@@ -31,9 +34,10 @@ const ProjectCard = ({ name, description, image, link, technologies = [], delay 
             asChild 
             variant="secondary"
             className="gap-2"
+            aria-label={t("btnProject") + ` ${name}`}
           >
             <a href={link} target="_blank" rel="noopener noreferrer">
-              Visita Progetto <ExternalLink className="h-4 w-4" />
+              {t("btnProject")} <ExternalLink className="h-4 w-4" />
             </a>
           </Button>
         </div>
