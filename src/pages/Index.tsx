@@ -1,11 +1,13 @@
-
+import React, { Suspense } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import FrontendSkills from "@/components/FrontendSkills";
-import BackendSkills from "@/components/BackendSkills";
-import Portfolio from "@/components/Portfolio";
-import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+
+// Lazy load dei componenti secondari
+const FrontendSkills = React.lazy(() => import("@/components/FrontendSkills"));
+const BackendSkills = React.lazy(() => import("@/components/BackendSkills"));
+const Portfolio = React.lazy(() => import("@/components/Portfolio"));
+const Footer = React.lazy(() => import("@/components/Footer"));
 
 const Index = () => {
   return (
@@ -13,12 +15,14 @@ const Index = () => {
       <SEO />
       <Header />
       <main>
-        <Hero />
-        <FrontendSkills />
-        <BackendSkills />
-        <Portfolio />
+        <Suspense fallback={null}>
+          <Hero />
+          <FrontendSkills />
+          <BackendSkills />
+          <Portfolio />
+          <Footer />
+        </Suspense>
       </main>
-      <Footer />
     </div>
   );
 };
