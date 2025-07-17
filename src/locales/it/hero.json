@@ -1,0 +1,12 @@
+{
+  "title": "Creazione di esperienze web moderne e performanti con una solida competenza in frontend e backend development",
+  "btnProject": "Vedi i miei progetti",
+  "btnSkills": "Le mie competenze",
+    "nav": {
+    "home": "Home",
+    "frontend": "Competenze Front-End",
+    "backend": "Competenze Back-End",
+    "portfolio": "Portfolio",
+    "contact": "Contattami"
+  }
+}

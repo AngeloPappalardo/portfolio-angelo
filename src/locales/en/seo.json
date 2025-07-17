@@ -1,0 +1,12 @@
+{
+  "title": "Web Developer Portfolio | Pappalardo Angelo",
+  "description": "Explore the portfolio of Pappalardo Angelo, a Web Developer specialized in modern and responsive Frontend and Backend development.",
+  "keywords": "Web Developer Portfolio, Pappalardo Angelo, Frontend Developer, Backend Developer, Full Stack Developer, Web Projects",
+  "personDescription": "Pappalardo Angelo is a Web Developer experienced in building modern and responsive web applications. Specializing in FrontEnd and Backend technologies, he has worked on a variety of projects that showcase both his technical skills and creativity.",
+  "breadcrumbs": {
+    "home": "Home",
+    "frontend": "FrontEnd Skills",
+    "backend": "BackEnd Skills",
+    "portfolio": "Portfolio"
+  }
+}

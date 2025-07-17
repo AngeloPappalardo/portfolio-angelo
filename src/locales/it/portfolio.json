@@ -1,0 +1,35 @@
+{
+  "title": "Portfolio",
+  "subtitle": "Una selezione dei miei progetti recenti",
+  "projects": [
+    {
+      "name": "Sito Telereading",
+      "description": "Sito web aziendale per Telereading, Specialisti in tecnologie per risparmio energetico e gestione delle utilities"
+    },
+    {
+      "name": "Swamm",
+      "description": "SWAMM è un progetto per il controllo sostenibile dell'acqua tramite un dispositivo di telemetria."
+    },
+    {
+      "name": "Telereading",
+      "description": "Progettazione di microservizi per il pagamento della sosta con PagoPA."
+    },
+    {
+      "name": "Film Act",
+      "description": "Un sito per la ricerca e visualizzazione di film, creato con React.js."
+    },
+    {
+      "name": "Dark Mode Tutorial",
+      "description": "Un'applicazione React che permette il passaggio tra modalità scura e chiara."
+    },
+    {
+      "name": "Vacanze Card List",
+      "description": "Una lista visuale delle vacanze, realizzata con React.js."
+    }
+    ,
+    {
+      "name": "Pokedex",
+      "description": "Un'applicazione per esplorare i Pokémon, creata con HTML, CSS e JavaScript puro."
+    }
+  ]
+}

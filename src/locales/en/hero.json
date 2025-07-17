@@ -1,0 +1,12 @@
+{
+  "title": "Crafting modern and high-performance web experiences with strong expertise in both frontend and backend development",
+  "btnProject": "View Projects",
+  "btnSkills": "View Skills",
+  "nav": {
+    "home": "Home",
+    "frontend": "FrontEnd Skills",
+    "backend": "BackEnd Skills",
+    "portfolio": "Portfolio",
+    "contact": "Contact Me"
+  }
+}

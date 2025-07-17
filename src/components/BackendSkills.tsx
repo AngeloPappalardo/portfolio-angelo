@@ -2,8 +2,11 @@
 import { SiGit, SiMongodb, SiSpringboot, SiSpringsecurity } from "@icons-pack/react-simple-icons";
 import SkillCard from "./SkillCard";
 import { Database, Server, FileCode, Map } from "lucide-react";
+import { useTranslation } from "react-i18next";
+
 
 const BackendSkills = () => {
+  const { t } = useTranslation("backend");
   const skillsData = [
     { 
       name: "Spring Boot",
@@ -50,7 +53,7 @@ const BackendSkills = () => {
     { 
       name: "Database Design",
       icon: <Database className="h-6 w-6" />,
-      level: 4,
+      level: 3,
       delay: 7
     }
   ];
@@ -59,10 +62,10 @@ const BackendSkills = () => {
     <section id="backend-skills" className="container px-4 py-24 bg-secondary/30 dark:bg-secondary/10">
       <div className="max-w-3xl mx-auto mb-12 text-center">
         <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-700 dark:from-primary dark:to-blue-400">
-          Backend Skills
+          {t("title")}
         </h2>
         <p className="text-lg text-muted-foreground">
-          Competenze tecniche per creare applicazioni robuste e scalabili
+          {t("subtitle")}
         </p>
       </div>
       
