@@ -26,9 +26,19 @@ export default defineConfig(({ mode }) => ({
     },
     rollupOptions: {
       output: {
-        manualChunks: {
-          react: ["react", "react-dom"],
-          vendor: ["@tanstack/react-query"],
+        manualChunks(id) {
+          if (id.includes("node_modules")) {
+            if (id.includes("framer-motion")) return "framer-motion";
+            if (id.includes("@hookform")) return "react-hook-form";
+            if (id.includes("@radix-ui")) return "radix-ui";
+            if (id.includes("@tanstack")) return "react-query";
+            if (id.includes("@floating-ui")) return "floating-ui";
+            if (id.includes("react-toast")) return "react-toastify";
+            if (id.includes("tailwind-merge")) return "tailwind-utils";
+            if (id.includes("zod")) return "zod";
+            if (id.includes("lodash")) return "lodash";
+            return "vendor"; // React e tutto il resto
+          }
         },
       },
     },
