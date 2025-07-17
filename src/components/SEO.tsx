@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 const SEO = () => {
   const { t, i18n } = useTranslation('seo');
-  const isItalian = i18n.language === 'it';
+  const isItalian = i18n.language === 'it-IT';
 
   const jsonLdWebsite = {
     "@context": "https://schema.org",

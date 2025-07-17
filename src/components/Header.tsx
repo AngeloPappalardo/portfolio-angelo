@@ -72,11 +72,11 @@ const Header = () => {
             variant="ghost"
             size="sm"
             onClick={() =>
-              i18n.changeLanguage(i18n.language === "en" ? "it" : "en")
+              i18n.changeLanguage(i18n.language === "en-US" ? "it-IT" : "en-US")
             }
             className="text-sm px-2"
           >
-            {i18n.language === "en" ? "IT" : "EN"}
+            {i18n.language === "en-US" ? "IT" : "EN"}
           </Button>
 
           <ThemeToggle />
@@ -96,11 +96,11 @@ const Header = () => {
             variant="ghost"
             size="sm"
             onClick={() =>
-              i18n.changeLanguage(i18n.language === "en" ? "it" : "en")
+              i18n.changeLanguage(i18n.language === "en-US" ? "it-IT" : "en-US")
             }
             className="text-sm px-2"
           >
-            {i18n.language === "en" ? "IT" : "EN"}
+            {i18n.language === "en-US" ? "IT" : "EN"}
           </Button>
 
           <ThemeToggle />
