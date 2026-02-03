@@ -1,7 +1,13 @@
 {
   "title": "Portfolio Web Developer | Pappalardo Angelo",
+  "siteName": "Portfolio di Pappalardo Angelo",
   "description": "Scopri il portfolio di Pappalardo Angelo, Web Developer specializzato in sviluppo Frontend e Backend con progetti moderni e responsive.",
   "keywords": "Portfolio Web Developer, Pappalardo Angelo, Sviluppatore Frontend, Backend, Progetti Web, Full Stack Developer",
+  "robots": "index,follow",
+  "themeColor": "#0f172a",
+  "ogImageAlt": "Anteprima del portfolio di Pappalardo Angelo",
+  "twitterSite": "@angelo_pappalardo",
+  "twitterCreator": "@angelo_pappalardo",
   "personDescription": "Pappalardo Angelo è un web Developer con esperienza nello sviluppo di applicazioni web moderne e responsive. Specializzato in tecnologie FrontEnd e Backend, ha lavorato su una varietà di progetti che dimostrano le sue competenze tecniche e la sua creatività.",
   "breadcrumbs": {
     "home": "Home",

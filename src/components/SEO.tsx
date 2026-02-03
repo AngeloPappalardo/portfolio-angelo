@@ -3,7 +3,9 @@ import { useTranslation } from 'react-i18next';
 
 const SEO = () => {
   const { t, i18n } = useTranslation('seo');
-  const isItalian = i18n.language === 'it-IT';
+  const isItalian = i18n.language.startsWith('it');
+  const locale = isItalian ? 'it_IT' : 'en_US';
+  const alternateLocale = isItalian ? 'en_US' : 'it_IT';
 
   const jsonLdWebsite = {
     "@context": "https://schema.org",
@@ -97,19 +99,30 @@ const SEO = () => {
       <meta name="description" content={t('description')} />
       <meta name="keywords" content={t('keywords')} />
       <meta name="author" content="Pappalardo Angelo" />
+      <meta name="robots" content={t('robots')} />
+      <meta name="theme-color" content={t('themeColor')} />
 
       <meta property="og:title" content={t('title')} />
       <meta property="og:description" content={t('description')} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://pappalardo-angelo.netlify.app" />
       <meta property="og:image" content="https://pappalardo-angelo.netlify.app/programmer2.jpg" />
+      <meta property="og:image:alt" content={t('ogImageAlt')} />
+      <meta property="og:locale" content={locale} />
+      <meta property="og:locale:alternate" content={alternateLocale} />
+      <meta property="og:site_name" content={t('siteName')} />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={t('title')} />
       <meta name="twitter:description" content={t('description')} />
       <meta name="twitter:image" content="https://pappalardo-angelo.netlify.app/programmer2.jpg" />
+      <meta name="twitter:site" content={t('twitterSite')} />
+      <meta name="twitter:creator" content={t('twitterCreator')} />
 
       <link rel="canonical" href="https://pappalardo-angelo.netlify.app" />
+      <link rel="alternate" hrefLang="en" href="https://pappalardo-angelo.netlify.app" />
+      <link rel="alternate" hrefLang="it" href="https://pappalardo-angelo.netlify.app" />
+      <link rel="alternate" hrefLang="x-default" href="https://pappalardo-angelo.netlify.app" />
 
       <script type="application/ld+json">
         {JSON.stringify(jsonLdWebsite)}
