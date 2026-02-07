@@ -12,49 +12,41 @@ const BackendSkills = () => {
       name: "Spring Boot",
       icon: <SiSpringboot className="h-6 w-6" />,
       level: 4,
-      delay: 0
     },
     { 
       name: "Spring Security",
       icon: <SiSpringsecurity className="h-6 w-6" />,
       level: 4,
-      delay: 1
     },
     { 
       name: "MongoDB",
       icon: <SiMongodb className="h-6 w-6" />,
       level: 4,
-      delay: 2
     },
     { 
       name: "REST API",
       icon: <FileCode className="h-6 w-6" />,
       level: 4,
-      delay: 3
     },
     { 
       name: "Git/GitHub/GitLab",
       icon: <SiGit className="h-6 w-6" />,
       level: 4,
-      delay: 4
     },
     { 
       name: "Nominatim/OpenStreetMap",
       icon: <Map className="h-6 w-6" />,
       level: 2,
-      delay: 5
     },
     { 
       name: "Linux Server Setup",
       icon: <Server className="h-6 w-6" />,
       level: 1,
-      delay: 6
     },
     { 
       name: "Database Design",
       icon: <Database className="h-6 w-6" />,
       level: 3,
-      delay: 7
     }
   ];
 
@@ -76,7 +68,6 @@ const BackendSkills = () => {
             name={skill.name} 
             icon={skill.icon} 
             level={skill.level}
-            delay={skill.delay}
           />
         ))}
       </div>

@@ -1,0 +1,25 @@
+{
+  "highlightsTitle": "Highlights",
+  "highlightsSubtitle": "Focused on measurable outcomes and clean, scalable delivery.",
+  "highlightsCta": "View full portfolio",
+  "highlights": [
+    {
+      "title": "Business impact",
+      "description": "Projects built to reduce costs, speed up operations and increase conversions."
+    },
+    {
+      "title": "Performance first",
+      "description": "Fast, accessible and SEO-ready interfaces with measurable improvements."
+    },
+    {
+      "title": "Reliable delivery",
+      "description": "Clear process, transparent estimates and predictable timelines."
+    }
+  ],
+  "ctaTag": "Let's build something",
+  "ctaTitle": "Turn your idea into a high-performing product",
+  "ctaSubtitle": "From corporate websites to microservices, I help you ship reliable digital solutions.",
+  "ctaPrimary": "Contact me",
+  "ctaSecondary": "Explore services"
+}
+

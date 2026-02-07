@@ -1,35 +1,44 @@
 {
   "title": "Portfolio",
-  "btnProject" : "Visit Project",
+  "btnProject": "Visit Project",
+  "contextLabel": "Context",
+  "techLabel": "Technologies used",
   "subtitle": "A selection of my recent projects",
   "projects": [
     {
       "name": "Telereading Website",
-      "description": "Corporate website for Telereading, specialists in energy-saving technologies and utility management."
+      "description": "Corporate website for Telereading, specialists in energy-saving technologies and utility management.",
+      "context": "Corporate website"
     },
     {
       "name": "Swamm",
-      "description": "SWAMM is a project for sustainable water control using a telemetry device."
+      "description": "SWAMM is a project for sustainable water control using a telemetry device.",
+      "context": "IoT telemetry platform"
     },
     {
       "name": "Telereading",
-      "description": "Design of microservices for parking payment via PagoPA."
+      "description": "Design of microservices for parking payment via PagoPA.",
+      "context": "Microservices architecture"
     },
     {
       "name": "Film Act",
-      "description": "A website for searching and viewing movies, built with React.js."
+      "description": "A website for searching and viewing movies, built with React.js.",
+      "context": "Media search app"
     },
     {
       "name": "Dark Mode Tutorial",
-      "description": "A React application that allows switching between dark and light mode."
+      "description": "A React application that allows switching between dark and light mode.",
+      "context": "UI interaction demo"
     },
     {
       "name": "Vacation Card List",
-      "description": "A visual list of vacations, built with React.js."
+      "description": "A visual list of vacations, built with React.js.",
+      "context": "UI list component"
     },
     {
       "name": "Pokedex",
-      "description": "An application for exploring Pokémon, created with HTML, CSS, and plain JavaScript."
+      "description": "An application for exploring Pokémon, created with HTML, CSS, and plain JavaScript.",
+      "context": "Data-driven mini app"
     }
   ]
 }

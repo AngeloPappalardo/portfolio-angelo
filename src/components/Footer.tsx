@@ -95,7 +95,7 @@ const Footer = () => {
           </div>
 
           <div className="h-64 md:h-full">
-            <SimpleMap address="Catania, Italia" />
+            <SimpleMap address="Catania, Italia" lat={37.606694} lng={15.137428} zoom={15} />
           </div>
         </div>
 

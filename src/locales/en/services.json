@@ -1,0 +1,64 @@
+{
+  "title": "Services",
+  "subtitle": "End-to-end solutions for corporate sites, platforms and digital payments.",
+  "items": [
+    {
+      "title": "Corporate sites & landing pages",
+      "description": "SEO-friendly, fast, accessible and conversion-focused."
+    },
+    {
+      "title": "Web apps & dashboards",
+      "description": "SPAs, reserved areas, API integration and authentication."
+    },
+    {
+      "title": "Microservices & integrations",
+      "description": "Scalable services, PagoPA integration and payment flows."
+    },
+    {
+      "title": "Maintenance & optimization",
+      "description": "Monitoring, performance tuning and continuous improvements."
+    }
+  ],
+  "deliverablesTitle": "What you get",
+  "deliverablesSubtitle": "Clear outputs at every step, so you can measure progress.",
+  "deliverables": [
+    "Information architecture",
+    "Wireframes & UX flow",
+    "Design system alignment",
+    "API integration plan",
+    "Performance budget",
+    "SEO checklist",
+    "Analytics setup",
+    "Deployment & monitoring"
+  ],
+  "industriesTitle": "Typical contexts",
+  "industriesSubtitle": "Experience across business domains and public services.",
+  "industries": [
+    "Energy & utilities",
+    "Smart parking & mobility",
+    "IoT telemetry platforms",
+    "Corporate services",
+    "E-commerce & catalogs",
+    "Public sector & PagoPA"
+  ],
+  "faqTitle": "FAQ",
+  "faqSubtitle": "Quick answers to common questions.",
+  "faqs": [
+    {
+      "question": "How long does a corporate website take?",
+      "answer": "Typically 3 to 7 weeks, depending on content readiness and integrations."
+    },
+    {
+      "question": "Can you work with existing design systems?",
+      "answer": "Yes. I can align to your brand guidelines or refine an existing design system."
+    },
+    {
+      "question": "Do you handle hosting and deployment?",
+      "answer": "I can support basic setups and simple deployments."
+    },
+    {
+      "question": "Is SEO included?",
+      "answer": "Yes. I apply on-page SEO, performance optimization and structured data."
+    }
+  ]
+}

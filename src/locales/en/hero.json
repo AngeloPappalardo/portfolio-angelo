@@ -4,8 +4,9 @@
   "btnSkills": "View Skills",
   "nav": {
     "home": "Home",
-    "frontend": "FrontEnd Skills",
-    "backend": "BackEnd Skills",
+    "services": "Services",
+    "process": "Process",
+    "skills": "Skills",
     "portfolio": "Portfolio",
     "contact": "Contact Me"
   }

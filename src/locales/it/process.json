@@ -1,0 +1,52 @@
+{
+  "title": "Processo",
+  "subtitle": "Un flusso chiaro per consegne con tempi certi.",
+  "steps": [
+    {
+      "title": "Scoperta e requisiti",
+      "description": "Allineamento su obiettivi, vincoli e metriche di successo."
+    },
+    {
+      "title": "UX/UI e prototipazione",
+      "description": "Wireframe, user flow e validazione rapida."
+    },
+    {
+      "title": "Sviluppo e integrazione",
+      "description": "Codice pulito, API, sicurezza e automazione."
+    },
+    {
+      "title": "Test, deploy e monitoraggio",
+      "description": "QA, rilascio e miglioramenti continui."
+    }
+  ],
+  "timelineTitle": "Timeline tipica",
+  "timelineSubtitle": "Una cadenza realistica che mantiene tutti allineati.",
+  "timeline": [
+    {
+      "title": "Settimana 1",
+      "description": "Workshop, definizione perimetro e roadmap."
+    },
+    {
+      "title": "Settimane 2-3",
+      "description": "UX/UI, struttura contenuti e pianificazione tecnica."
+    },
+    {
+      "title": "Settimane 4-6",
+      "description": "Implementazione, integrazioni e performance tuning."
+    },
+    {
+      "title": "Settimana 7",
+      "description": "QA, go-live, monitoraggio e handover."
+    }
+  ],
+  "outcomesTitle": "Risultati chiave",
+  "outcomesSubtitle": "Cosa ottieni alla fine di ogni ciclo.",
+  "outcomes": [
+    "Requisiti chiari",
+    "UX validata",
+    "Codice pronto per produzione",
+    "Performance misurate",
+    "API documentate",
+    "Rilasci sicuri"
+  ]
+}

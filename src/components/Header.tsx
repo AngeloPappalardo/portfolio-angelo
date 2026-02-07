@@ -1,3 +1,4 @@
+import { Link, NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import ThemeToggle from "./ThemeToggle";
@@ -11,10 +12,11 @@ const Header = () => {
   const { t, i18n } = useTranslation("hero");
 
   const navigation = [
-    { name: t("nav.home"), href: "#home" },
-    { name: t("nav.frontend"), href: "#frontend-skills" },
-    { name: t("nav.backend"), href: "#backend-skills" },
-    { name: t("nav.portfolio"), href: "#portfolio" },
+    { name: t("nav.home"), href: "/" },
+    { name: t("nav.services"), href: "/servizi" },
+    { name: t("nav.process"), href: "/processo" },
+    { name: t("nav.skills"), href: "/competenze" },
+    { name: t("nav.portfolio"), href: "/portfolio" },
   ];
 
   useEffect(() => {
@@ -26,13 +28,15 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavigation = (href: string) => {
-    setMobileMenuOpen(false);
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
-  };
-
   const handleEmail = () => {
     window.location.href = "mailto:angelo961996@gmail.com";
+  };
+
+  const setLanguage = (lang: "en" | "it") => {
+    i18n.changeLanguage(lang);
+    const url = new URL(window.location.href);
+    url.searchParams.set("lng", lang);
+    window.history.replaceState({}, "", url.toString());
   };
 
   return (
@@ -46,24 +50,29 @@ const Header = () => {
     >
       <div className="container flex justify-between items-center h-16 px-4 md:px-6">
         <div className="flex items-center">
-          <a href="#home" className="text-2xl font-bold tracking-tighter">
+          <Link to="/" className="text-2xl font-bold tracking-tighter">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-700 dark:from-primary dark:to-blue-400">
               AP
             </span>
-          </a>
+          </Link>
         </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
           {navigation.map((item) => (
-            <button
+            <NavLink
               key={item.name}
-              onClick={() => handleNavigation(item.href)}
-              aria-label={'Navigation to ' + item.name}
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+              to={item.href}
+              aria-label={"Navigation to " + item.name}
+              className={({ isActive }) =>
+                [
+                  "text-sm font-medium transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+                  isActive ? "text-primary" : "text-foreground/80 hover:text-primary",
+                ].join(" ")
+              }
             >
               {item.name}
-            </button>
+            </NavLink>
           ))}
           <Button aria-label="Email" variant="outline" onClick={handleEmail} className="gap-2">
             <Mail className="h-4 w-4" />
@@ -72,13 +81,11 @@ const Header = () => {
           <Button
             variant="ghost"
             size="sm"
-            onClick={() =>
-              i18n.changeLanguage(i18n.language === "en-US" ? "it-IT" : "en-US")
-            }
+            onClick={() => setLanguage(i18n.language.startsWith("en") ? "it" : "en")}
             className="text-sm px-2"
             aria-label="Cambia lingua"
           >
-            {i18n.language === "en-US" ? "IT" : "EN"}
+            {i18n.language.startsWith("en") ? "IT" : "EN"}
           </Button>
 
           <ThemeToggle />
@@ -99,13 +106,11 @@ const Header = () => {
           <Button
             variant="ghost"
             size="sm"
-            onClick={() =>
-              i18n.changeLanguage(i18n.language === "en-US" ? "it-IT" : "en-US")
-            }
+            onClick={() => setLanguage(i18n.language.startsWith("en") ? "it" : "en")}
             className="text-sm px-2"
             aria-label="Cambia lingua"
           >
-            {i18n.language === "en-US" ? "IT" : "EN"}
+            {i18n.language.startsWith("en") ? "IT" : "EN"}
           </Button>
 
           <ThemeToggle aria-label="Cambia tema" />
@@ -131,14 +136,20 @@ const Header = () => {
         <div className="md:hidden bg-background/95 dark:bg-background/95 backdrop-blur-sm p-4 shadow-lg">
           <nav className="flex flex-col items-center gap-4">
             {navigation.map((item) => (
-              <button
+              <NavLink
                 key={item.name}
-                onClick={() => handleNavigation(item.href)}
-                className="text-lg font-medium w-full py-2 text-center hover:text-primary transition-colors"
-                aria-label={'Navigation to ' + item.name}
+                to={item.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className={({ isActive }) =>
+                  [
+                    "text-lg font-medium w-full py-2 text-center transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+                    isActive ? "text-primary" : "hover:text-primary",
+                  ].join(" ")
+                }
+                aria-label={"Navigation to " + item.name}
               >
                 {item.name}
-              </button>
+              </NavLink>
             ))}
           </nav>
         </div>

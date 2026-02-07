@@ -1,53 +1,35 @@
 
-import { useEffect, useRef } from 'react';
-
 interface SimpleMapProps {
   address: string;
+  lat?: number;
+  lng?: number;
   zoom?: number;
 }
 
-const SimpleMap = ({ address, zoom = 15 }: SimpleMapProps) => {
-  const mapRef = useRef<HTMLDivElement>(null);
-  const iframeRef = useRef<HTMLIFrameElement>(null);
-
-  useEffect(() => {
-    if (mapRef.current && !iframeRef.current) {
-      // Encode the address for use in the URL
-      const encodedAddress = encodeURIComponent(address);
-      
-      // Create the iframe
-      const iframe = document.createElement('iframe');
-      iframe.style.width = '100%';
-      iframe.style.height = '100%';
-      iframe.style.border = '0';
-      iframe.frameBorder = '0';
-      iframe.src = `https://www.openstreetmap.org/export/embed.html?bbox=15.1274,37.5966,15.1474,37.6166&layer=mapnik&marker=37.60669382574149,15.137428172998247
-`;
-      iframe.loading = 'lazy';
-      iframe.referrerPolicy = 'no-referrer-when-downgrade';
-      iframe.title = "Map";
-      
-      // Store the iframe reference
-      iframeRef.current = iframe;
-      
-      // Add the iframe to the map container
-      mapRef.current.appendChild(iframe);
-    }
-    
-    return () => {
-      if (mapRef.current && iframeRef.current) {
-        mapRef.current.removeChild(iframeRef.current);
-        iframeRef.current = null;
-      }
-    };
-  }, [address, zoom]);
+const SimpleMap = ({ address, lat = 37.606694, lng = 15.137428, zoom = 15 }: SimpleMapProps) => {
+  const tileSize = 256;
+  const scale = 1 << zoom;
+  const degreesPerPixel = 360 / (tileSize * scale);
+  const halfWidth = degreesPerPixel * 320;
+  const halfHeight = degreesPerPixel * 180;
+  const left = lng - halfWidth;
+  const right = lng + halfWidth;
+  const top = lat + halfHeight;
+  const bottom = lat - halfHeight;
+  const bbox = `${left},${bottom},${right},${top}`;
+  const src = `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${lat},${lng}`;
 
   return (
-    <div 
-      ref={mapRef} 
-      className="w-full h-full rounded-lg overflow-hidden shadow-md border border-border bg-card"
-      aria-label="Interactive map showing the location"
-    />
+    <div className="w-full h-full rounded-lg overflow-hidden shadow-md border border-border bg-card">
+      <iframe
+        src={src}
+        title={`Map of ${address}`}
+        className="w-full h-full border-0"
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        aria-label={`Interactive map showing ${address}`}
+      />
+    </div>
   );
 };
 

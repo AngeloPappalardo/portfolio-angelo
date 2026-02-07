@@ -1,36 +1,44 @@
 {
   "title": "Portfolio",
   "subtitle": "Una selezione dei miei progetti recenti",
-  "btnProject" : "Visita Progetto",
+  "btnProject": "Visita Progetto",
+  "contextLabel": "Contesto",
+  "techLabel": "Tecnologie usate",
   "projects": [
     {
       "name": "Sito Telereading",
-      "description": "Sito web aziendale per Telereading, Specialisti in tecnologie per risparmio energetico e gestione delle utilities"
+      "description": "Sito web aziendale per Telereading, specialisti in tecnologie per il risparmio energetico e gestione delle utilities.",
+      "context": "Sito corporate"
     },
     {
       "name": "Swamm",
-      "description": "SWAMM è un progetto per il controllo sostenibile dell'acqua tramite un dispositivo di telemetria."
+      "description": "SWAMM è un progetto per il controllo sostenibile dell'acqua tramite un dispositivo di telemetria.",
+      "context": "Piattaforma IoT di telemetria"
     },
     {
       "name": "Telereading",
-      "description": "Progettazione di microservizi per il pagamento della sosta con PagoPA."
+      "description": "Progettazione di microservizi per il pagamento della sosta con PagoPA.",
+      "context": "Architettura a microservizi"
     },
     {
       "name": "Film Act",
-      "description": "Un sito per la ricerca e visualizzazione di film, creato con React.js."
+      "description": "Un sito per la ricerca e visualizzazione di film, creato con React.js.",
+      "context": "App di ricerca media"
     },
     {
       "name": "Dark Mode Tutorial",
-      "description": "Un'applicazione React che permette il passaggio tra modalità scura e chiara."
+      "description": "Un'applicazione React che permette il passaggio tra modalità scura e chiara.",
+      "context": "Demo interazioni UI"
     },
     {
       "name": "Vacanze Card List",
-      "description": "Una lista visuale delle vacanze, realizzata con React.js."
-    }
-    ,
+      "description": "Una lista visuale delle vacanze, realizzata con React.js.",
+      "context": "Componente lista UI"
+    },
     {
       "name": "Pokedex",
-      "description": "Un'applicazione per esplorare i Pokémon, creata con HTML, CSS e JavaScript puro."
+      "description": "Un'applicazione per esplorare i Pokémon, creata con HTML, CSS e JavaScript puro.",
+      "context": "Mini app data-driven"
     }
   ]
 }

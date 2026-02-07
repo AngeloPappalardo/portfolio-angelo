@@ -1,0 +1,64 @@
+{
+  "title": "Servizi",
+  "subtitle": "Soluzioni end-to-end per siti corporate, piattaforme e pagamenti digitali.",
+  "items": [
+    {
+      "title": "Siti corporate e landing",
+      "description": "SEO-friendly, veloci, accessibili e orientati alla conversione."
+    },
+    {
+      "title": "Web app e dashboard",
+      "description": "SPA, aree riservate, integrazione API e autenticazione."
+    },
+    {
+      "title": "Microservizi e integrazioni",
+      "description": "Servizi scalabili, integrazione PagoPA e flussi di pagamento."
+    },
+    {
+      "title": "Manutenzione e ottimizzazione",
+      "description": "Monitoraggio, performance tuning e miglioramenti continui."
+    }
+  ],
+  "deliverablesTitle": "Cosa ottieni",
+  "deliverablesSubtitle": "Output chiari in ogni fase per misurare l'avanzamento.",
+  "deliverables": [
+    "Architettura informativa",
+    "Wireframe e UX flow",
+    "Allineamento design system",
+    "Piano integrazione API",
+    "Performance budget",
+    "Checklist SEO",
+    "Setup analytics",
+    "Deploy e monitoraggio"
+  ],
+  "industriesTitle": "Contesti tipici",
+  "industriesSubtitle": "Esperienza in domini business e servizi pubblici.",
+  "industries": [
+    "Energia e utilities",
+    "Smart parking e mobilità",
+    "Piattaforme IoT di telemetria",
+    "Servizi corporate",
+    "E-commerce e cataloghi",
+    "Pubblica amministrazione e PagoPA"
+  ],
+  "faqTitle": "FAQ",
+  "faqSubtitle": "Risposte rapide alle domande più comuni.",
+  "faqs": [
+    {
+      "question": "Quanto tempo serve per un sito corporate?",
+      "answer": "In media 3-7 settimane, in base ai contenuti e alle integrazioni."
+    },
+    {
+      "question": "Puoi lavorare con un design system già esistente?",
+      "answer": "Sì. Posso allinearmi alle linee guida del brand o ottimizzare il design system."
+    },
+    {
+      "question": "Gestisci hosting e deploy?",
+      "answer": "Posso supportarti per setup base e deploy semplici."
+    },
+    {
+      "question": "La SEO è inclusa?",
+      "answer": "Sì. Applico SEO on-page, ottimizzazione performance e dati strutturati."
+    }
+  ]
+}

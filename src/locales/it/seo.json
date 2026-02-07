@@ -8,11 +8,39 @@
   "ogImageAlt": "Anteprima del portfolio di Pappalardo Angelo",
   "twitterSite": "@angelo_pappalardo",
   "twitterCreator": "@angelo_pappalardo",
-  "personDescription": "Pappalardo Angelo è un web Developer con esperienza nello sviluppo di applicazioni web moderne e responsive. Specializzato in tecnologie FrontEnd e Backend, ha lavorato su una varietà di progetti che dimostrano le sue competenze tecniche e la sua creatività.",
+  "personDescription": "Pappalardo Angelo è un web developer con esperienza nello sviluppo di applicazioni web moderne e responsive. Specializzato in tecnologie FrontEnd e Backend, ha lavorato su una varietà di progetti che dimostrano le sue competenze tecniche e la sua creatività.",
+  "pages": {
+    "home": {
+      "title": "Portfolio Web Developer | Pappalardo Angelo",
+      "description": "Web developer specializzato in frontend, backend e microservizi. Highlights e progetti recenti."
+    },
+    "services": {
+      "title": "Servizi | Pappalardo Angelo",
+      "description": "Siti corporate, web app, microservizi e integrazioni PagoPA su misura per il tuo business."
+    },
+    "process": {
+      "title": "Processo | Pappalardo Angelo",
+      "description": "Un flusso chiaro e affidabile dalla scoperta al rilascio, con focus su qualità e risultati."
+    },
+    "skills": {
+      "title": "Competenze | Pappalardo Angelo",
+      "description": "Competenze frontend e backend, strumenti e tecnologie per soluzioni web moderne."
+    },
+    "portfolio": {
+      "title": "Portfolio | Pappalardo Angelo",
+      "description": "Case study e progetti tra siti corporate, dashboard e architetture a microservizi."
+    },
+    "contact": {
+      "title": "Contatti | Pappalardo Angelo",
+      "description": "Scrivimi per parlare del tuo progetto, tempi e esigenze tecniche."
+    }
+  },
   "breadcrumbs": {
     "home": "Home",
-    "frontend": "FrontEnd Skills",
-    "backend": "BackEnd Skills",
-    "portfolio": "Portfolio"
+    "services": "Servizi",
+    "process": "Processo",
+    "skills": "Competenze",
+    "portfolio": "Portfolio",
+    "contact": "Contatti"
   }
 }

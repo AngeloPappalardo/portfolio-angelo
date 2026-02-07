@@ -16,6 +16,7 @@ const Portfolio = () => {
     {
       name: translatedProjects[0].name,
       description: translatedProjects[0].description,
+      context: translatedProjects[0].context,
       image: SitoTelereading,
       link: "https://www.telereading.it/",
       technologies: [
@@ -25,55 +26,54 @@ const Portfolio = () => {
         "SEO-Friendly",
         "Responsive Design",
       ],
-      delay: 0,
     },
     {
       name: translatedProjects[1].name,
       description: translatedProjects[1].description,
+      context: translatedProjects[1].context,
       image: Swamm,
       link: "https://swamm.eu/#/",
       technologies: ["Quasar.js", "vue.js", "CSS"],
-      delay: 1,
     },
     {
       name: translatedProjects[2].name,
       description: translatedProjects[2].description,
+      context: translatedProjects[2].context,
       image: Telereading,
       link: "https://www.iotparking.it/",
       technologies: ["Java", "Spring boot", "MongoDB", "API Rest", "Soap"],
-      delay: 2,
     },
     {
       name: translatedProjects[3].name,
       description: translatedProjects[3].description,
+      context: translatedProjects[3].context,
       image: FilmAct,
       link: "https://filmact.netlify.app/",
       technologies: ["React.js", "API", "Responsive Design"],
-      delay: 3,
     },
     {
       name: translatedProjects[4].name,
       description: translatedProjects[4].description,
+      context: translatedProjects[4].context,
       image: DarckImg,
       link: "https://dark-mode-tutorial.netlify.app/",
       technologies: ["React.js", "Dark/Light Theme"],
-      delay: 4,
     },
     {
       name: translatedProjects[5].name,
       description: translatedProjects[5].description,
+      context: translatedProjects[5].context,
       image: VacanzeImg,
       link: "https://vacanze.netlify.app/",
       technologies: ["React.js", "CSS", "JavaScript"],
-      delay: 5,
     },
     {
       name: translatedProjects[6].name,
       description: translatedProjects[6].description,
+      context: translatedProjects[6].context,
       image: Pokedex,
       link: "https://pappalardo-angelo-pokedex.netlify.app/",
       technologies: ["HTML", "CSS", "JavaScript"],
-      delay: 6,
     },
   ];
 
@@ -89,6 +89,7 @@ const Portfolio = () => {
         name: "Pappalardo Angelo",
       },
       description: project.description,
+      about: project.context,
       image: `https://pappalardo-angelo.netlify.app${project.image}`,
       keywords: project.technologies.join(", "),
     })),
@@ -118,7 +119,7 @@ const Portfolio = () => {
               image={project.image}
               link={project.link}
               technologies={project.technologies}
-              delay={project.delay}
+              context={project.context}
             />
           ))}
         </div>

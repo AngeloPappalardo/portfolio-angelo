@@ -1,0 +1,52 @@
+{
+  "title": "Process",
+  "subtitle": "A clear flow to deliver with predictable timelines.",
+  "steps": [
+    {
+      "title": "Discovery & requirements",
+      "description": "Goals, constraints and success metrics alignment."
+    },
+    {
+      "title": "UX/UI & prototyping",
+      "description": "Wireframes, user flows and fast validation."
+    },
+    {
+      "title": "Development & integration",
+      "description": "Clean code, APIs, security and automation."
+    },
+    {
+      "title": "Testing, deploy & monitoring",
+      "description": "QA, release and continuous improvements."
+    }
+  ],
+  "timelineTitle": "Typical timeline",
+  "timelineSubtitle": "A realistic cadence that keeps stakeholders aligned.",
+  "timeline": [
+    {
+      "title": "Week 1",
+      "description": "Discovery workshop, scope definition and roadmap."
+    },
+    {
+      "title": "Weeks 2-3",
+      "description": "UX/UI, content structure and technical planning."
+    },
+    {
+      "title": "Weeks 4-6",
+      "description": "Implementation, integrations and performance tuning."
+    },
+    {
+      "title": "Week 7",
+      "description": "QA, launch, monitoring and handover."
+    }
+  ],
+  "outcomesTitle": "Key outcomes",
+  "outcomesSubtitle": "What you can expect at the end of each cycle.",
+  "outcomes": [
+    "Clear requirements",
+    "Validated UX",
+    "Production-ready code",
+    "Measured performance",
+    "Documented APIs",
+    "Safe releases"
+  ]
+}

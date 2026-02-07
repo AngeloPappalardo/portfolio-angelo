@@ -9,10 +9,38 @@
   "twitterSite": "@angelo_pappalardo",
   "twitterCreator": "@angelo_pappalardo",
   "personDescription": "Pappalardo Angelo is a Web Developer experienced in building modern and responsive web applications. Specializing in FrontEnd and Backend technologies, he has worked on a variety of projects that showcase both his technical skills and creativity.",
+  "pages": {
+    "home": {
+      "title": "Web Developer Portfolio | Pappalardo Angelo",
+      "description": "Web developer specialized in frontend, backend and microservices. Explore highlights and recent work."
+    },
+    "services": {
+      "title": "Services | Pappalardo Angelo",
+      "description": "Corporate websites, web apps, microservices and digital payment integrations tailored to your business."
+    },
+    "process": {
+      "title": "Process | Pappalardo Angelo",
+      "description": "A clear, reliable workflow from discovery to launch, focused on quality and measurable outcomes."
+    },
+    "skills": {
+      "title": "Skills | Pappalardo Angelo",
+      "description": "Frontend and backend skills, tools and technologies used to build modern web solutions."
+    },
+    "portfolio": {
+      "title": "Portfolio | Pappalardo Angelo",
+      "description": "Case studies and projects across corporate sites, dashboards and microservice architectures."
+    },
+    "contact": {
+      "title": "Contact | Pappalardo Angelo",
+      "description": "Get in touch to discuss your project, timeline and technical needs."
+    }
+  },
   "breadcrumbs": {
     "home": "Home",
-    "frontend": "FrontEnd Skills",
-    "backend": "BackEnd Skills",
-    "portfolio": "Portfolio"
+    "services": "Services",
+    "process": "Process",
+    "skills": "Skills",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
   }
 }

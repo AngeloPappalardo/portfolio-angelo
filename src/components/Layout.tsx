@@ -4,6 +4,12 @@ import { ReactNode } from 'react';
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <div className="min-h-screen w-full relative">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-background focus:text-foreground focus:px-4 focus:py-2 focus:rounded-md focus:shadow"
+      >
+        Skip to content
+      </a>
       {/* Dynamic Programming Background */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
         {/* Theme-aware gradient overlay */}

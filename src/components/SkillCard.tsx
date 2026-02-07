@@ -6,15 +6,13 @@ interface SkillCardProps {
   icon?: React.ReactNode;
   level?: number;
   className?: string;
-  delay?: number;
 }
 
-const SkillCard = ({ name, icon, level = 5, className, delay = 0 }: SkillCardProps) => {
+const SkillCard = ({ name, icon, level = 5, className }: SkillCardProps) => {
   return (
     <div 
       className={cn(
-        "p-4 rounded-lg border border-border bg-card shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col items-center justify-center opacity-0",
-        `animate-slide-up animation-delay-${delay * 100}`,
+        "p-4 rounded-lg border border-border bg-card shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col items-center justify-center opacity-0 animate-slide-up animation-delay-100",
         className
       )}
     >

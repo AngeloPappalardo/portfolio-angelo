@@ -1,29 +1,20 @@
 import React, { Suspense } from "react";
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
 import SEO from "@/components/SEO";
 
-// Lazy load dei componenti secondari
-const Services = React.lazy(() => import("@/components/Services"));
-const Process = React.lazy(() => import("@/components/Process"));
 const FrontendSkills = React.lazy(() => import("@/components/FrontendSkills"));
 const BackendSkills = React.lazy(() => import("@/components/BackendSkills"));
-const Portfolio = React.lazy(() => import("@/components/Portfolio"));
 const Footer = React.lazy(() => import("@/components/Footer"));
 
-const Index = () => {
+const SkillsPage = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <SEO />
+      <SEO path="/competenze" />
       <Header />
       <main id="main-content">
         <Suspense fallback={null}>
-          <Hero />
-          <Services />
-          <Process />
           <FrontendSkills />
           <BackendSkills />
-          <Portfolio />
           <Footer />
         </Suspense>
       </main>
@@ -31,4 +22,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default SkillsPage;

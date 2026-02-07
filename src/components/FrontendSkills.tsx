@@ -17,49 +17,41 @@ const FrontendSkills = () => {
       name: "JavaScript",
       icon: <SiJavascript className="h-6 w-6" />,
       level: 5,
-      delay: 0,
     },
     {
       name: "React.js",
       icon: <SiReact className="h-6 w-6" />,
       level: 4,
-      delay: 1,
     },
     {
       name: "Vue.js",
       icon: <SiVuedotjs className="h-6 w-6" />,
       level: 5,
-      delay: 2,
     },
     {
       name: "Quasar.js",
       icon: <SiQuasar className="h-6 w-6" />,
       level: 5,
-      delay: 3,
     },
     {
       name: "HTML5 / CSS3",
       icon: <FileCode className="h-6 w-6" />,
       level: 5,
-      delay: 4,
     },
     {
       name: "Tailwind CSS",
       icon: <SiTailwindcss className="h-6 w-6" />,
       level: 3,
-      delay: 5,
     },
     {
       name: "Flutter",
       icon: <SiFlutter className="h-6 w-6" />,
       level: 3,
-      delay: 6,
     },
     {
       name: "Responsive Design",
       icon: <MonitorSmartphone className="h-6 w-6" />,
       level: 4,
-      delay: 7,
     },
   ];
 
@@ -81,7 +73,6 @@ const FrontendSkills = () => {
             name={skill.name}
             icon={skill.icon}
             level={skill.level}
-            delay={skill.delay}
           />
         ))}
       </div>

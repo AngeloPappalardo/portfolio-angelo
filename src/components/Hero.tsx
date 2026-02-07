@@ -1,12 +1,13 @@
 import { ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const { t } = useTranslation("hero");
   const scrollToNextSection = () => {
     document
-      .querySelector("#frontend-skills")
+      .querySelector("#highlights")
       ?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -28,32 +29,16 @@ const Hero = () => {
         </p>
 
         <div className="flex flex-wrap justify-center gap-4">
-          <Button
-            onClick={() =>
-              document
-                .querySelector("#portfolio")
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
-            variant="default"
-            size="lg"
-            className="rounded-full"
-            aria-label={'Navigation to ' + t("btnProject")}
-          >
-            {t("btnProject")}
+          <Button asChild variant="default" size="lg" className="rounded-full">
+            <Link to="/portfolio" aria-label={"Navigation to " + t("btnProject")}>
+              {t("btnProject")}
+            </Link>
           </Button>
 
-          <Button
-            onClick={() =>
-              document
-                .querySelector("#frontend-skills")
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
-            variant="outline"
-            size="lg"
-            className="rounded-full"
-            aria-label={'Navigation to ' + t("btnSkills")}
-          >
-            {t("btnSkills")}
+          <Button asChild variant="outline" size="lg" className="rounded-full">
+            <Link to="/competenze" aria-label={"Navigation to " + t("btnSkills")}>
+              {t("btnSkills")}
+            </Link>
           </Button>
         </div>
       </div>
