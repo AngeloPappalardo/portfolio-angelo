@@ -19,6 +19,9 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  ssr: {
+    noExternal: ["react-helmet-async"],
+  },
   build: {
     target: "es2020",
     modulePreload: {

@@ -1,6 +1,5 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
 
 // EN imports
 import heroEN from './locales/en/hero.json';
@@ -37,7 +36,7 @@ const resources = {
     process: processEN,
     contact: contactEN,
     footer: footerEN,
-    seo: seoEN
+    seo: seoEN,
   },
   it: {
     hero: heroIT,
@@ -49,24 +48,32 @@ const resources = {
     process: processIT,
     contact: contactIT,
     footer: footerIT,
-    seo: seoIT
+    seo: seoIT,
   },
 };
 
-i18n
-  .use(LanguageDetector)
-  .use(initReactI18next)
-  .init({
-    resources,
-    fallbackLng: 'en',
-    supportedLngs: ['en', 'it'],
-    detection: {
-      order: ['querystring', 'localStorage', 'navigator'],
-      lookupQuerystring: 'lng'
-    },
-    interpolation: {
-      escapeValue: false,
-    },
-  });
+const getInitialLanguage = () => {
+  if (typeof window === 'undefined') {
+    return 'it';
+  }
+
+  const queryLanguage = new URLSearchParams(window.location.search).get('lng');
+  if (queryLanguage && ['en', 'it'].includes(queryLanguage)) {
+    return queryLanguage;
+  }
+
+  const navigatorLanguage = window.navigator.language?.slice(0, 2);
+  return navigatorLanguage === 'it' ? 'it' : 'en';
+};
+
+i18n.use(initReactI18next).init({
+  resources,
+  fallbackLng: 'en',
+  supportedLngs: ['en', 'it'],
+  lng: getInitialLanguage(),
+  interpolation: {
+    escapeValue: false,
+  },
+});
 
 export default i18n;

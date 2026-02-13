@@ -1,7 +1,22 @@
+import { ReactNode, useMemo } from 'react';
 
-import { ReactNode } from 'react';
+const symbols = ['</', '{}', '()', '=>', '[]', 'const', 'let', 'function', '&&', '||', '++', '--', '+=', 'console.log()', '<section />'];
 
 const Layout = ({ children }: { children: ReactNode }) => {
+  const decorativeItems = useMemo(
+    () =>
+      Array.from({ length: 50 }).map((_, index) => ({
+        key: index,
+        left: `${(index * 37) % 100}%`,
+        top: `${(index * 29) % 100}%`,
+        animationDelay: `${(index % 8) * 0.8}s`,
+        fontSize: `${0.6 + (index % 6) * 0.2}rem`,
+        opacity: 0.45 + (index % 5) * 0.1,
+        symbol: symbols[index % symbols.length],
+      })),
+    []
+  );
+
   return (
     <div className="min-h-screen w-full relative">
       <a
@@ -10,36 +25,32 @@ const Layout = ({ children }: { children: ReactNode }) => {
       >
         Skip to content
       </a>
-      {/* Dynamic Programming Background */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
-        {/* Theme-aware gradient overlay */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/20 via-background to-background dark:from-primary/10 dark:via-background dark:to-background"></div>
-        
-        {/* Programming elements layer */}
+
         <div className="absolute inset-0 opacity-30 dark:opacity-20">
           <div className="absolute w-full h-full">
-            {Array.from({ length: 50 }).map((_, i) => (
+            {decorativeItems.map((item) => (
               <div
-                key={i}
+                key={item.key}
                 className="absolute animate-float"
                 style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                  animationDelay: `${Math.random() * 8}s`,
-                  fontSize: `${Math.random() * 1.2 + 0.5}rem`,
-                  opacity: Math.random() * 0.4 + 0.5
+                  left: item.left,
+                  top: item.top,
+                  animationDelay: item.animationDelay,
+                  fontSize: item.fontSize,
+                  opacity: item.opacity,
                 }}
               >
-                {['</', '{}', '()', '=>', '[]', 'const', 'let', 'function', '&&', '||', '++', '--', '+=', 'console.log()', '<section />'][Math.floor(Math.random() * 15)]}
+                {item.symbol}
               </div>
             ))}
           </div>
         </div>
 
-        {/* Matrix-like grid effect */}
         <div className="absolute inset-0 bg-grid-small-primary/[0.2] dark:bg-grid-small-white/[0.2]" />
       </div>
-      
+
       {children}
     </div>
   );
