@@ -17,7 +17,7 @@ const SEO = ({ path = "" }: SEOProps) => {
   const routePath = path || location.pathname;
   const normalizedRoutePath = routePath.replace(/\/+$/, "") || "/";
   const normalizedPath = normalizedRoutePath === "/" ? "" : normalizedRoutePath;
-  const canonicalUrl = `${siteUrl}${normalizedPath}?lng=${languageCode}`;
+  const canonicalUrl = `${siteUrl}${normalizedPath}`;
   const pageMap: Record<string, string> = {
     "/": "home",
     "/servizi": "services",
@@ -171,7 +171,7 @@ const SEO = ({ path = "" }: SEOProps) => {
       <link rel="canonical" href={canonicalUrl} />
       <link rel="alternate" hrefLang="en" href={`${siteUrl}${normalizedPath}?lng=en`} />
       <link rel="alternate" hrefLang="it" href={`${siteUrl}${normalizedPath}?lng=it`} />
-      <link rel="alternate" hrefLang="x-default" href={`${siteUrl}${normalizedPath}`} />
+      <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
 
       <script
         type="application/ld+json"
