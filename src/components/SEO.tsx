@@ -34,26 +34,36 @@ const SEO = ({ path = "" }: SEOProps) => {
   const pageTitle = getPageText("title");
   const pageDescription = getPageText("description");
   const breadcrumbMap: Record<string, string> = {
-    "/": t("breadcrumbs.home"),
+    "": t("breadcrumbs.home"),
     "/servizi": t("breadcrumbs.services"),
     "/processo": t("breadcrumbs.process"),
     "/competenze": t("breadcrumbs.skills"),
     "/portfolio": t("breadcrumbs.portfolio"),
     "/contatti": t("breadcrumbs.contact"),
   };
+
+  const buildBreadcrumbName = (pathValue: string) => {
+    if (breadcrumbMap[pathValue]) {
+      return breadcrumbMap[pathValue];
+    }
+
+    const lastSegment = pathValue.split('/').filter(Boolean).pop() ?? '';
+    return decodeURIComponent(lastSegment)
+      .replace(/[-_]/g, ' ')
+      .replace(/\b\w/g, char => char.toUpperCase());
+  };
+
+  const breadcrumbPaths = normalizedPath
+    ? normalizedPath.split('/').filter(Boolean).map((_, index, segments) => `/${segments.slice(0, index + 1).join('/')}`)
+    : [];
+
   const breadcrumbTrail = [
     { name: t("breadcrumbs.home"), item: `${siteUrl}/` },
+    ...breadcrumbPaths.map(pathValue => ({
+      name: buildBreadcrumbName(pathValue),
+      item: `${siteUrl}${pathValue}`,
+    })),
   ];
-
-  if (normalizedPath && normalizedPath !== "/") {
-    const label = breadcrumbMap[normalizedPath];
-    if (label) {
-      breadcrumbTrail.push({
-        name: label,
-        item: `${siteUrl}${normalizedPath}`,
-      });
-    }
-  }
 
   const jsonLdWebsite = {
     "@context": "https://schema.org",
@@ -111,6 +121,8 @@ const SEO = ({ path = "" }: SEOProps) => {
   };
 
   const shouldRenderBreadcrumb = breadcrumbTrail.length > 1;
+  const serializedWebsiteSchema = JSON.stringify(jsonLdWebsite);
+  const serializedPersonSchema = JSON.stringify(jsonLdPerson);
 
   const jsonLdBreadcrumb = shouldRenderBreadcrumb
     ? {
@@ -123,6 +135,9 @@ const SEO = ({ path = "" }: SEOProps) => {
           "item": item.item
         }))
       }
+    : null;
+  const serializedBreadcrumbSchema = jsonLdBreadcrumb
+    ? JSON.stringify(jsonLdBreadcrumb)
     : null;
 
   return (
@@ -158,16 +173,19 @@ const SEO = ({ path = "" }: SEOProps) => {
       <link rel="alternate" hrefLang="it" href={`${siteUrl}${normalizedPath}?lng=it`} />
       <link rel="alternate" hrefLang="x-default" href={`${siteUrl}${normalizedPath}`} />
 
-      <script type="application/ld+json">
-        {JSON.stringify(jsonLdWebsite)}
-      </script>
-      <script type="application/ld+json">
-        {JSON.stringify(jsonLdPerson)}
-      </script>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializedWebsiteSchema }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializedPersonSchema }}
+      />
       {jsonLdBreadcrumb ? (
-        <script type="application/ld+json">
-          {JSON.stringify(jsonLdBreadcrumb)}
-        </script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: serializedBreadcrumbSchema ?? "" }}
+        />
       ) : null}
     </Helmet>
   );
