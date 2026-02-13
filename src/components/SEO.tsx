@@ -170,8 +170,8 @@ const SEO = ({ path = "" }: SEOProps) => {
       <meta name="language" content={languageCode} />
 
       <link rel="canonical" href={canonicalUrl} />
-      <link rel="alternate" hrefLang="en" href={`${siteUrl}${canonicalPath}?lng=en`} />
-      <link rel="alternate" hrefLang="it" href={`${siteUrl}${canonicalPath}?lng=it`} />
+      <link rel="alternate" hrefLang="en" href={`${siteUrl}${canonicalPath}`} />
+      <link rel="alternate" hrefLang="it" href={`${siteUrl}${canonicalPath}`} />
       <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
 
       <script
