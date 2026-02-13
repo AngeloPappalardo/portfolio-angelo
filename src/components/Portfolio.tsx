@@ -6,10 +6,11 @@ import FilmAct from "../assets/img/FilmAct.webp";
 import Swamm from "../assets/img/Swamm.webp";
 import Telereading from "../assets/img/Telereading.webp";
 import SitoTelereading from "../assets/img/SitoTelereading.webp";
+import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const Portfolio = () => {
-  const { t } = useTranslation("portfolio");
+  const { t, i18n } = useTranslation("portfolio");
   const translatedProjects = t('projects', { returnObjects: true });
 
   const projects = [
@@ -77,6 +78,15 @@ const Portfolio = () => {
     },
   ];
 
+  const initialVisibleProjects = 4;
+  const [visibleCount, setVisibleCount] = useState(initialVisibleProjects);
+  const visibleProjects = useMemo(
+    () => projects.slice(0, visibleCount),
+    [projects, visibleCount]
+  );
+  const hasMoreProjects = visibleCount < projects.length;
+  const showMoreLabel = i18n.language.startsWith("it") ? "Mostra altri progetti" : "Show more projects";
+
   // Genera lo schema.org JSON-LD per tutti i progetti
   const structuredData = {
     "@context": "https://schema.org",
@@ -111,7 +121,7 @@ const Portfolio = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {projects.map((project, index) => (
+          {visibleProjects.map((project, index) => (
             <ProjectCard
               key={index}
               name={project.name}
@@ -123,6 +133,18 @@ const Portfolio = () => {
             />
           ))}
         </div>
+
+        {hasMoreProjects ? (
+          <div className="mt-10 flex justify-center">
+            <button
+              type="button"
+              onClick={() => setVisibleCount(projects.length)}
+              className="inline-flex items-center justify-center rounded-md border border-input bg-background px-5 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+            >
+              {showMoreLabel}
+            </button>
+          </div>
+        ) : null}
       </section>
     </>
   );
