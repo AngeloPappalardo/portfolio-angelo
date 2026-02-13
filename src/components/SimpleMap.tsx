@@ -1,3 +1,4 @@
+import { ExternalLink, MapPinned } from "lucide-react";
 
 interface SimpleMapProps {
   address: string;
@@ -7,28 +8,31 @@ interface SimpleMapProps {
 }
 
 const SimpleMap = ({ address, lat = 37.606694, lng = 15.137428, zoom = 15 }: SimpleMapProps) => {
-  const tileSize = 256;
-  const scale = 1 << zoom;
-  const degreesPerPixel = 360 / (tileSize * scale);
-  const halfWidth = degreesPerPixel * 320;
-  const halfHeight = degreesPerPixel * 180;
-  const left = lng - halfWidth;
-  const right = lng + halfWidth;
-  const top = lat + halfHeight;
-  const bottom = lat - halfHeight;
-  const bbox = `${left},${bottom},${right},${top}`;
-  const src = `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${lat},${lng}`;
+  const mapUrl = `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lng}#map=${zoom}/${lat}/${lng}`;
 
   return (
-    <div className="w-full h-full rounded-lg overflow-hidden shadow-md border border-border bg-card">
-      <iframe
-        src={src}
-        title={`Map of ${address}`}
-        className="w-full h-full border-0"
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-        aria-label={`Interactive map showing ${address}`}
-      />
+    <div className="w-full h-full rounded-lg overflow-hidden shadow-md border border-border bg-card p-6">
+      <div className="h-full flex flex-col items-center justify-center text-center gap-4">
+        <div className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-primary">
+          <MapPinned className="h-7 w-7" />
+        </div>
+
+        <div className="space-y-1">
+          <p className="font-semibold">Mappa posizione</p>
+          <p className="text-sm text-muted-foreground">{address}</p>
+        </div>
+
+        <a
+          href={mapUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 rounded-md border border-input bg-background px-4 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+          aria-label={`Apri la mappa di ${address} in una nuova scheda`}
+        >
+          Apri mappa
+          <ExternalLink className="h-4 w-4" />
+        </a>
+      </div>
     </div>
   );
 };
