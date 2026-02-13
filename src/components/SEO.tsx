@@ -106,16 +106,20 @@ const SEO = ({ path = "" }: SEOProps) => {
     }
   };
 
-  const jsonLdBreadcrumb = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": breadcrumbTrail.map((item, index) => ({
-      "@type": "ListItem",
-      "position": index + 1,
-      "name": item.name,
-      "item": item.item
-    }))
-  };
+  const shouldRenderBreadcrumb = breadcrumbTrail.length > 1;
+
+  const jsonLdBreadcrumb = shouldRenderBreadcrumb
+    ? {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": breadcrumbTrail.map((item, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "name": item.name,
+          "item": item.item
+        }))
+      }
+    : null;
 
   return (
     <Helmet>
@@ -156,9 +160,11 @@ const SEO = ({ path = "" }: SEOProps) => {
       <script type="application/ld+json">
         {JSON.stringify(jsonLdPerson)}
       </script>
-      <script type="application/ld+json">
-        {JSON.stringify(jsonLdBreadcrumb)}
-      </script>
+      {jsonLdBreadcrumb ? (
+        <script type="application/ld+json">
+          {JSON.stringify(jsonLdBreadcrumb)}
+        </script>
+      ) : null}
     </Helmet>
   );
 };
