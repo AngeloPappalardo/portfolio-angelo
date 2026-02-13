@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom';
 
 interface SEOProps {
   path?: string;
@@ -7,12 +8,15 @@ interface SEOProps {
 
 const SEO = ({ path = "" }: SEOProps) => {
   const { t, i18n } = useTranslation('seo');
+  const location = useLocation();
   const isItalian = i18n.language.startsWith('it');
   const languageCode = isItalian ? 'it' : 'en';
   const locale = isItalian ? 'it_IT' : 'en_US';
   const alternateLocale = isItalian ? 'en_US' : 'it_IT';
   const siteUrl = "https://pappalardo-angelo.netlify.app";
-  const normalizedPath = path === "/" ? "" : path;
+  const routePath = path || location.pathname;
+  const normalizedRoutePath = routePath.replace(/\/+$/, "") || "/";
+  const normalizedPath = normalizedRoutePath === "/" ? "" : normalizedRoutePath;
   const canonicalUrl = `${siteUrl}${normalizedPath}?lng=${languageCode}`;
   const pageMap: Record<string, string> = {
     "/": "home",
