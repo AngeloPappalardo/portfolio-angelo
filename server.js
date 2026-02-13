@@ -27,6 +27,18 @@ const normalizeUrl = (incomingUrl) => {
   return incomingUrl.startsWith(base) ? incomingUrl.replace(base, '/') : incomingUrl;
 };
 
+const deferStylesheetLoading = (html) => html.replace(
+  /<link rel="stylesheet"([^>]*?)href="([^"]+)"([^>]*?)>/g,
+  (_match, beforeHref = '', href = '', afterHref = '') => {
+    const isLocalAsset = href.startsWith('/assets/');
+    if (!isLocalAsset) return _match;
+
+    const combinedAttributes = `${beforeHref}${afterHref}`;
+    return `<link rel="preload" as="style" href="${href}"${combinedAttributes} onload="this.onload=null;this.rel='stylesheet'">`
+      + `<noscript><link rel="stylesheet" href="${href}"${combinedAttributes}></noscript>`;
+  }
+);
+
 if (!isProduction) {
   const { createServer } = await import('vite');
   vite = await createServer({
@@ -50,9 +62,11 @@ const server = http.createServer(async (req, res) => {
         const { render: devRender } = await vite.ssrLoadModule('/src/entry-server.tsx');
         const { appHtml, helmet } = await devRender(normalizeUrl(reqUrl));
 
-        const html = transformedTemplate
-          .replace('<!--app-head-->', `${helmet?.title?.toString() ?? ''}${helmet?.meta?.toString() ?? ''}${helmet?.link?.toString() ?? ''}${helmet?.script?.toString() ?? ''}`)
-          .replace('<!--app-html-->', appHtml);
+        const html = deferStylesheetLoading(
+          transformedTemplate
+            .replace('<!--app-head-->', `${helmet?.title?.toString() ?? ''}${helmet?.meta?.toString() ?? ''}${helmet?.link?.toString() ?? ''}${helmet?.script?.toString() ?? ''}`)
+            .replace('<!--app-html-->', appHtml)
+        );
 
         res.writeHead(200, { 'Content-Type': 'text/html' });
         res.end(html);
@@ -68,9 +82,11 @@ const server = http.createServer(async (req, res) => {
     }
 
     const { appHtml, helmet } = await render(normalizeUrl(reqUrl));
-    const html = template
-      .replace('<!--app-head-->', `${helmet?.title?.toString() ?? ''}${helmet?.meta?.toString() ?? ''}${helmet?.link?.toString() ?? ''}${helmet?.script?.toString() ?? ''}`)
-      .replace('<!--app-html-->', appHtml);
+    const html = deferStylesheetLoading(
+      template
+        .replace('<!--app-head-->', `${helmet?.title?.toString() ?? ''}${helmet?.meta?.toString() ?? ''}${helmet?.link?.toString() ?? ''}${helmet?.script?.toString() ?? ''}`)
+        .replace('<!--app-html-->', appHtml)
+    );
 
     res.writeHead(200, { 'Content-Type': 'text/html' });
     res.end(html);
