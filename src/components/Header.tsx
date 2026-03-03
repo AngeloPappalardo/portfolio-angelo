@@ -20,12 +20,22 @@ const Header = () => {
   ];
 
   useEffect(() => {
+    let frameId = 0;
+
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      if (frameId) return;
+      frameId = window.requestAnimationFrame(() => {
+        const nextScrolled = window.scrollY > 50;
+        setScrolled((prev) => (prev === nextScrolled ? prev : nextScrolled));
+        frameId = 0;
+      });
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (frameId) window.cancelAnimationFrame(frameId);
+    };
   }, []);
 
   const handleEmail = () => {
@@ -42,7 +52,7 @@ const Header = () => {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 w-full z-50 transition-all duration-300",
+        "fixed top-0 left-0 w-full z-50 transition-colors duration-300",
         scrolled
           ? "bg-white/80 dark:bg-gray-950/80 shadow-md backdrop-blur"
           : "bg-transparent"

@@ -1,9 +1,11 @@
+import { lazy, Suspense } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import HomeHighlights from "@/components/HomeHighlights";
-import HomeCTA from "@/components/HomeCTA";
-import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+
+const HomeHighlights = lazy(() => import("@/components/HomeHighlights"));
+const HomeCTA = lazy(() => import("@/components/HomeCTA"));
+const Footer = lazy(() => import("@/components/Footer"));
 
 const Home = () => {
   return (
@@ -12,9 +14,11 @@ const Home = () => {
       <Header />
       <main id="main-content">
         <Hero />
-        <HomeHighlights />
-        <HomeCTA />
-        <Footer />
+        <Suspense fallback={null}>
+          <HomeHighlights />
+          <HomeCTA />
+          <Footer />
+        </Suspense>
       </main>
     </div>
   );
