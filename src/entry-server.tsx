@@ -7,7 +7,7 @@ import i18n from './i18n';
 import './index.css';
 
 const resolveLanguageFromUrl = (url: string) => {
-  const parsedUrl = new URL(url, 'https://pappalardo-angelo.netlify.app');
+  const parsedUrl = new URL(url, 'https://pappalardoangelo.netlify.app');
   const language = parsedUrl.searchParams.get('lng');
   return language === 'it' || language === 'en' ? language : 'it';
 };

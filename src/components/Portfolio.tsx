@@ -100,7 +100,7 @@ const Portfolio = () => {
       },
       description: project.description,
       about: project.context,
-      image: `https://pappalardo-angelo.netlify.app${project.image}`,
+      image: `https://pappalardoangelo.netlify.app${project.image}`,
       keywords: project.technologies.join(", "),
     })),
   };

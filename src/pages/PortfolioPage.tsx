@@ -1,9 +1,7 @@
-import React, { Suspense } from "react";
 import Header from "@/components/Header";
+import Portfolio from "@/components/Portfolio";
+import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-
-const Portfolio = React.lazy(() => import("@/components/Portfolio"));
-const Footer = React.lazy(() => import("@/components/Footer"));
 
 const PortfolioPage = () => {
   return (
@@ -11,10 +9,8 @@ const PortfolioPage = () => {
       <SEO path="/portfolio" />
       <Header />
       <main id="main-content">
-        <Suspense fallback={null}>
-          <Portfolio />
-          <Footer />
-        </Suspense>
+        <Portfolio />
+        <Footer />
       </main>
     </div>
   );

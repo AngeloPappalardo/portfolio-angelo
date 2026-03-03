@@ -35,7 +35,7 @@ const ProjectCard = ({ name, description, image, link, technologies = [], contex
           alt={name}
           loading="lazy"
           decoding="async"
-          fetchPriority="low"
+          fetchpriority="low"
           width={640}
           height={360}
           className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"

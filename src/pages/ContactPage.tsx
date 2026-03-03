@@ -1,10 +1,8 @@
-import React, { Suspense } from "react";
 import Header from "@/components/Header";
 import SEO from "@/components/SEO";
+import Footer from "@/components/Footer";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { useTranslation } from "react-i18next";
-
-const Footer = React.lazy(() => import("@/components/Footer"));
 
 const ContactPage = () => {
   const { t } = useTranslation("contact");
@@ -51,9 +49,7 @@ const ContactPage = () => {
           </div>
         </section>
 
-        <Suspense fallback={null}>
-          <Footer />
-        </Suspense>
+        <Footer />
       </main>
     </div>
   );

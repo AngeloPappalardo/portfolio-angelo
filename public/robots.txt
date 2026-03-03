@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://pappalardo-angelo.netlify.app/sitemap.xml
+Sitemap: https://pappalardoangelo.netlify.app/sitemap.xml

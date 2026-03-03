@@ -1,9 +1,7 @@
-import React, { Suspense } from "react";
 import Header from "@/components/Header";
+import Services from "@/components/Services";
+import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-
-const Services = React.lazy(() => import("@/components/Services"));
-const Footer = React.lazy(() => import("@/components/Footer"));
 
 const ServicesPage = () => {
   return (
@@ -11,10 +9,8 @@ const ServicesPage = () => {
       <SEO path="/servizi" />
       <Header />
       <main id="main-content">
-        <Suspense fallback={null}>
-          <Services />
-          <Footer />
-        </Suspense>
+        <Services />
+        <Footer />
       </main>
     </div>
   );

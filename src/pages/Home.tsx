@@ -1,11 +1,9 @@
-import React, { Suspense } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import HomeHighlights from "@/components/HomeHighlights";
+import HomeCTA from "@/components/HomeCTA";
+import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-
-const HomeHighlights = React.lazy(() => import("@/components/HomeHighlights"));
-const HomeCTA = React.lazy(() => import("@/components/HomeCTA"));
-const Footer = React.lazy(() => import("@/components/Footer"));
 
 const Home = () => {
   return (
@@ -13,12 +11,10 @@ const Home = () => {
       <SEO path="/" />
       <Header />
       <main id="main-content">
-        <Suspense fallback={null}>
-          <Hero />
-          <HomeHighlights />
-          <HomeCTA />
-          <Footer />
-        </Suspense>
+        <Hero />
+        <HomeHighlights />
+        <HomeCTA />
+        <Footer />
       </main>
     </div>
   );

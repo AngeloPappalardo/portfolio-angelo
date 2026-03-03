@@ -13,7 +13,7 @@ const SEO = ({ path = "" }: SEOProps) => {
   const languageCode = isItalian ? 'it' : 'en';
   const locale = isItalian ? 'it_IT' : 'en_US';
   const alternateLocale = isItalian ? 'en_US' : 'it_IT';
-  const siteUrl = "https://pappalardo-angelo.netlify.app";
+  const siteUrl = "https://pappalardoangelo.netlify.app";
   const routePath = path || location.pathname;
   const normalizedRoutePath = routePath.replace(/\/+$/, "") || "/";
   const normalizedPath = normalizedRoutePath === "/" ? "" : normalizedRoutePath;
@@ -84,7 +84,7 @@ const SEO = ({ path = "" }: SEOProps) => {
     "name": "Pappalardo Angelo",
     "url": siteUrl,
     "jobTitle": "Web Developer",
-    "image": "https://pappalardo-angelo.netlify.app/programmer2.jpg",
+    "image": "https://pappalardoangelo.netlify.app/programmer2.jpg",
     "mainEntityOfPage": siteUrl,
     "description": t('personDescription'),
     "address": {
