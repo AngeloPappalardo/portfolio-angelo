@@ -62,8 +62,7 @@ const getInitialLanguage = () => {
     return queryLanguage;
   }
 
-  const navigatorLanguage = window.navigator.language?.slice(0, 2);
-  return navigatorLanguage === 'it' ? 'it' : 'en';
+  return 'it';
 };
 
 i18n.use(initReactI18next).init({
