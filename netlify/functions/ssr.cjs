@@ -15,7 +15,7 @@ const getTemplate = async () => {
 
 const getRender = async () => {
   if (!render) {
-    const serverEntryPath = path.resolve(__dirname, '../../dist/server/entry-server.mjs');
+    const serverEntryPath = path.resolve(__dirname, '../../dist/server/entry-server.js');
     const serverEntryUrl = pathToFileURL(serverEntryPath).href;
     const mod = await import(serverEntryUrl);
     render = mod.render;

@@ -8,6 +8,7 @@
 
 [functions.ssr]
   included_files = [
+    "package.json",
     "dist/client/index.html",
     "dist/server/**"
   ]
