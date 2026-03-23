@@ -1,6 +1,5 @@
 const fs = require('node:fs/promises');
 const path = require('node:path');
-const { pathToFileURL } = require('node:url');
 
 let template;
 let render;
@@ -15,9 +14,8 @@ const getTemplate = async () => {
 
 const getRender = async () => {
   if (!render) {
-    const serverEntryPath = path.resolve(__dirname, '../../dist/server/entry-server.js');
-    const serverEntryUrl = pathToFileURL(serverEntryPath).href;
-    const mod = await import(serverEntryUrl);
+    const serverEntryPath = path.resolve(__dirname, '../../dist/server/entry-server.cjs');
+    const mod = require(serverEntryPath);
     render = mod.render;
   }
   return render;
