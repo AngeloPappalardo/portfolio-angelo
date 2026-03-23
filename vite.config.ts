@@ -4,7 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 import compression from "vite-plugin-compression";
 
-export default defineConfig(({ mode }) => ({
+export default defineConfig(({ mode, ssrBuild }) => ({
   server: {
     host: "::",
     port: 8080,
@@ -20,7 +20,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
   ssr: {
-    noExternal: ["react-helmet-async"],
+    noExternal: ssrBuild ? true : ["react-helmet-async"],
   },
   build: {
     target: "es2020",
