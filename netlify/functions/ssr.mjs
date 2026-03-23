@@ -1,6 +1,5 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { render as renderApp } from '../../dist/server/entry-server.js';
 
 let template;
@@ -8,10 +7,7 @@ const render = renderApp;
 
 const getTemplate = async () => {
   if (!template) {
-    const templatePath = path.resolve(
-      path.dirname(fileURLToPath(import.meta.url)),
-      '../../dist/client/index.html'
-    );
+    const templatePath = path.resolve(process.cwd(), 'dist/client/index.html');
     template = await fs.readFile(templatePath, 'utf-8');
   }
   return template;
