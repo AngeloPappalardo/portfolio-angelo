@@ -1,13 +1,16 @@
-const fs = require('node:fs/promises');
-const path = require('node:path');
-const { pathToFileURL } = require('node:url');
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { pathToFileURL, fileURLToPath } from 'node:url';
 
 let template;
 let render;
 
 const getTemplate = async () => {
   if (!template) {
-    const templatePath = path.resolve(__dirname, '../../dist/client/index.html');
+    const templatePath = path.resolve(
+      path.dirname(fileURLToPath(import.meta.url)),
+      '../../dist/client/index.html'
+    );
     template = await fs.readFile(templatePath, 'utf-8');
   }
   return template;
@@ -15,7 +18,10 @@ const getTemplate = async () => {
 
 const getRender = async () => {
   if (!render) {
-    const serverEntryPath = path.resolve(__dirname, '../../dist/server/entry-server.js');
+    const serverEntryPath = path.resolve(
+      path.dirname(fileURLToPath(import.meta.url)),
+      '../../dist/server/entry-server.js'
+    );
     const serverEntryUrl = pathToFileURL(serverEntryPath).href;
     const mod = await import(serverEntryUrl);
     render = mod.render;
@@ -51,7 +57,7 @@ const buildRequestUrl = (event) => {
   return pathValue;
 };
 
-exports.handler = async (event) => {
+export async function handler(event) {
   try {
     const [htmlTemplate, renderFn] = await Promise.all([getTemplate(), getRender()]);
     const requestUrl = buildRequestUrl(event);
@@ -82,4 +88,4 @@ exports.handler = async (event) => {
       body: error instanceof Error ? error.stack : String(error),
     };
   }
-};
+}
