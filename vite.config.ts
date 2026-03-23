@@ -21,7 +21,7 @@ export default defineConfig(({ mode, ssrBuild }) => ({
   },
   ssr: {
     noExternal: ssrBuild ? true : ["react-helmet-async"],
-    ...(ssrBuild ? { format: "cjs" } : {}),
+    ...(ssrBuild ? { format: "es" } : {}),
   },
   build: {
     target: "es2020",
@@ -32,8 +32,8 @@ export default defineConfig(({ mode, ssrBuild }) => ({
       output: {
         ...(ssrBuild
           ? {
-              format: "cjs",
-              entryFileNames: "entry-server.cjs",
+              format: "es",
+              entryFileNames: "entry-server.mjs",
             }
           : {}),
         manualChunks(id) {
