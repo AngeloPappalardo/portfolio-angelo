@@ -4,11 +4,10 @@
   functions = "netlify/functions"
 
 [functions]
-  node_bundler = "none"
+  node_bundler = "esbuild"
 
 [functions.ssr]
   included_files = [
-    "package.json",
     "dist/client/index.html",
     "dist/server/**"
   ]

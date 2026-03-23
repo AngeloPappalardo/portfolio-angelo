@@ -1,9 +1,10 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { pathToFileURL, fileURLToPath } from 'node:url';
+import { fileURLToPath } from 'node:url';
+import { render as renderApp } from '../../dist/server/entry-server.js';
 
 let template;
-let render;
+const render = renderApp;
 
 const getTemplate = async () => {
   if (!template) {
@@ -16,18 +17,7 @@ const getTemplate = async () => {
   return template;
 };
 
-const getRender = async () => {
-  if (!render) {
-    const serverEntryPath = path.resolve(
-      path.dirname(fileURLToPath(import.meta.url)),
-      '../../dist/server/entry-server.js'
-    );
-    const serverEntryUrl = pathToFileURL(serverEntryPath).href;
-    const mod = await import(serverEntryUrl);
-    render = mod.render;
-  }
-  return render;
-};
+const getRender = async () => render;
 
 const deferStylesheetLoading = (html) =>
   html.replace(

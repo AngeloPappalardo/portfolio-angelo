@@ -21,6 +21,7 @@ export default defineConfig(({ mode, ssrBuild }) => ({
   },
   ssr: {
     noExternal: ssrBuild ? true : ["react-helmet-async"],
+    ...(ssrBuild ? { format: "cjs" } : {}),
   },
   build: {
     target: "es2020",
@@ -29,6 +30,12 @@ export default defineConfig(({ mode, ssrBuild }) => ({
     },
     rollupOptions: {
       output: {
+        ...(ssrBuild
+          ? {
+              format: "cjs",
+              entryFileNames: "entry-server.cjs",
+            }
+          : {}),
         manualChunks(id) {
           if (id.includes("node_modules")) {
             if (id.includes("framer-motion")) return "framer-motion";
