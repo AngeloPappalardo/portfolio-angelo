@@ -21,6 +21,7 @@ export default defineConfig(({ mode, ssrBuild }) => ({
   },
   ssr: {
     noExternal: ssrBuild ? true : ["react-helmet-async"],
+    ...(ssrBuild ? { format: "cjs" } : {}),
   },
   build: {
     target: "es2020",
